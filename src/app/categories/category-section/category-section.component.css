@@ -1,0 +1,103 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.category-section {
+  width: calc(100% - 48px);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+/* دو ردیف پنج‌تایی دسته‌بندی‌ها */
+.main-category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 3px;
+}
+
+/* هر گزینه مانند رستوران، کافه و میوه */
+.main-category-card {
+  min-width: 0;
+  height: 82px;
+  padding: 7px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--color-text);
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.main-category-card:hover {
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 14px var(--color-shadow);
+  transform: translateY(-2px);
+}
+/* کادر روشن پشت تصویر یا ایموجی */
+.category-image-box {
+  position: relative;
+  width: 58px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* اندازه تصویر فعلی که به‌صورت ایموجی است */
+.category-icon {
+  font-size: 29px;
+  line-height: 1;
+}
+
+/* عنوان زیر تصویر */
+.category-title {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* برچسب کوچک گالری */
+.category-badge {
+  position: absolute;
+  top: -5px;
+  left: -7px;
+  padding: 2px 5px;
+  color: #ffffff;
+  background-color: var(--color-primary-dark);
+  border-radius: 7px;
+  font-size: 7px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* پس‌زمینه گزینه مشاهده همه */
+.more-category-box {
+  background-color: var(--color-primary-extra-light);
+}
+
+/* سه نقطه گزینه مشاهده همه */
+.more-category-icon {
+  color: var(--color-primary-dark);
+
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+

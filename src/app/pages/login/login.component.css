@@ -1,0 +1,292 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.login-page {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  min-height: 620px;
+  padding: 24px 28px 22px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.93);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(109, 168, 228, 0.16);
+  backdrop-filter: blur(4px);
+}
+
+/* دکمه برگشت */
+
+.back-button.p-button.p-button-text {
+  position: absolute;
+
+  top: 20px;
+  right: 22px;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-text);
+  background-color: var(--color-primary-extra-light);
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button.p-button.p-button-text:enabled:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+
+  transform: translateX(2px);
+
+  border: none;
+  box-shadow: none;
+}
+
+.back-button .pi {
+  font-size: 19px;
+}
+
+/* محتوای اصلی فرم */
+
+.login-content {
+  width: 100%;
+
+  margin-top: 76px;
+
+  text-align: right;
+}
+
+.login-title {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.login-description {
+  margin: 12px 0 30px;
+
+  color: var(--color-text-soft);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* فیلد شماره موبایل */
+
+.mobile-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.mobile-field label {
+  color: #403a43;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mobile-input.p-inputtext {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  background-color: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 13px;
+  outline: none;
+  box-shadow: none;
+
+  direction: ltr;
+  text-align: right;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mobile-input.p-inputtext:hover {
+  border-color: #c9c9c9;
+}
+
+.mobile-input.p-inputtext:focus {
+ background-color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(142, 197, 255, 0.18);
+}
+
+/* متن قوانین */
+
+.terms-text {
+  margin: 18px 0 0;
+
+   color: var(--color-primary-dark);
+
+  font-size: 12px;
+  line-height: 2;
+}
+
+.terms-link {
+  color: #1f34a9;
+
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+/* قسمت دکمه ادامه */
+
+.login-actions {
+  width: 100%;
+
+  margin-top: auto;
+  padding-top: 22px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.continue-button.p-button {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+   color: #ffffff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 13px;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.continue-button.p-button:enabled:hover {
+    background-color: var(--color-primary-dark);
+  box-shadow: 0 5px 14px rgba(109, 168, 228, 0.2);
+}
+
+.continue-button.p-button:disabled,
+.continue-button.p-button.p-disabled {
+ color: #8ea1b3;
+  background-color: #dfeaf4;
+
+  opacity: 1;
+  cursor: not-allowed;
+
+  transform: none;
+  box-shadow: none;
+}
+
+
+.error-message {
+  margin: 12px 0 0;
+  color: #5c8fc2;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+
+/* حالت موبایل */
+
+@media screen and (max-width: 520px) {
+  :host {
+    padding: 0;
+
+    background-color: #ffffff;
+  }
+
+  .login-page {
+    max-width: none;
+    min-height: 100vh;
+
+    padding: 20px 18px 18px;
+
+    border: none;
+    border-top: 4px solid #d4006e;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .back-button.p-button.p-button-text {
+    top: 16px;
+    right: 16px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  .login-content {
+    margin-top: 68px;
+  }
+
+  .login-title {
+    font-size: 23px;
+  }
+
+  .login-description {
+    margin-bottom: 24px;
+
+    font-size: 13px;
+  }
+
+  .mobile-input.p-inputtext {
+    height: 50px;
+
+    font-size: 15px;
+  }
+
+  .continue-button.p-button {
+    height: 48px;
+  }
+}

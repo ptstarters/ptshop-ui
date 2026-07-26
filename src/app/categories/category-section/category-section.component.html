@@ -1,0 +1,34 @@
+<section class="category-section" dir="rtl" aria-label="دسته‌بندی‌های اسنپ‌فود">
+  <div class="main-category-grid">
+    <button
+      *ngFor="let category of mainCategories; trackBy: trackByTitle"
+      type="button"
+      class="main-category-card"
+      (click)="selectCategory(category)"
+    >
+      <span
+        class="category-image-box"
+        [ngClass]="{
+          'more-category-box': category.isMore,
+        }"
+      >
+        <span *ngIf="category.badge" class="category-badge">
+          {{ category.badge }}
+        </span>
+
+        <span
+          class="category-icon"
+          [ngClass]="{
+            'more-category-icon': category.isMore,
+          }"
+        >
+          {{ category.icon }}
+        </span>
+      </span>
+
+      <span class="category-title">
+        {{ category.title }}
+      </span>
+    </button>
+  </div>
+</section>

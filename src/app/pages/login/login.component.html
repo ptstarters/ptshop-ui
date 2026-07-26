@@ -1,0 +1,52 @@
+<section class="login-page" dir="rtl">
+ <button
+  pButton
+  type="button"
+  class="back-button p-button-text"
+  aria-label="بازگشت به صفحه اصلی"
+  (click)="goBack()"
+>
+  <i class="pi pi-arrow-right"></i>
+</button>
+
+  <div class="login-content">
+    <h1 class="login-title">ورود به حساب کاربری</h1>
+
+    <p class="login-description">برای ادامه، شماره موبایل خود را وارد کنید.</p>
+
+    <div class="mobile-field">
+      <label for="mobileNumber"> شماره موبایل </label>
+
+      <input
+        id="mobileNumber"
+        pInputText
+        type="tel"
+        class="mobile-input"
+        inputmode="numeric"
+        maxlength="11"
+        autocomplete="tel"
+        [(ngModel)]="mobileNumber"
+      />
+    </div>
+
+    <p class="terms-text">
+      با ورود،
+      <a href="#" class="terms-link" (click)="$event.preventDefault()">
+        شرایط و قوانین
+      </a>
+      استفاده از پارس فود را می‌پذیرم.
+    </p>
+  </div>
+
+  <div class="login-actions">
+    <button
+      pButton
+      type="button"
+      class="continue-button"
+      [disabled]="!isMobileValid"
+      (click)="continueLogin()"
+    >
+      ادامه
+    </button>
+  </div>
+</section>

@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'YekanFont';
+
+  src:
+    url('./assets/fonts/Yekan.woff') format('woff'),
+    url('./assets/fonts/Yekan.ttf') format('truetype');
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  --app-font: 'YekanFont', Tahoma, Arial, sans-serif;
+  --color-primary: #8ec5ff;
+  --color-primary-dark: #6aaeea;
+  --color-primary-light: #dff1ff;
+  --color-primary-extra-light: #f3faff;
+
+  --color-surface: #ffffff;
+  --color-surface-soft: #f7fbff;
+  --color-surface-hover: #eef7ff;
+
+  --color-border: #d7e8f7;
+  --color-text: #2f4052;
+  --color-text-soft: #6f8398;
+
+  --color-shadow: rgba(109, 168, 228, 0.18);
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--app-font);
+
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: 'Vazirmatn Variable', Tahoma, Arial, sans-serif;
+  color: var(--color-text);
+  background-color: #f6fbff;
+
+  /* پس‌زمینه ابری */
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.95) 0 60px, transparent 61px),
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.9) 0 45px, transparent 46px),
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.92) 0 55px, transparent 56px),
+
+    radial-gradient(circle at 70% 12%, rgba(255, 255, 255, 0.95) 0 70px, transparent 71px),
+    radial-gradient(circle at 78% 10%, rgba(255, 255, 255, 0.9) 0 52px, transparent 53px),
+    radial-gradient(circle at 86% 15%, rgba(255, 255, 255, 0.92) 0 62px, transparent 63px),
+
+    radial-gradient(circle at 55% 35%, rgba(255, 255, 255, 0.65) 0 90px, transparent 91px),
+    linear-gradient(to bottom, #eaf6ff 0%, #f8fcff 45%, #ffffff 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+button,
+input,
+textarea,
+select,
+.p-component {
+  .p-component {
+   font-family: var(--app-font) !important;
+}
+}
+button,
+input,
+textarea,
+select,
+option,
+label,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+.p-component {
+  font-family: var(--app-font) !important;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+.pi,
+.pi::before {
+  font-family: 'primeicons' !important;
+  font-style: normal;
+  font-weight: normal;
+}
