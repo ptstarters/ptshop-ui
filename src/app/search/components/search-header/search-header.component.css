@@ -1,5 +1,6 @@
 :host {
-    display: block;
+  display: block;
+  font-family: 'YekanFont', sans-serif;
 }
 
 /* بخش اصلی header */
@@ -29,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-   color: var(--color-text);
+  color: var(--color-text);
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -73,6 +74,7 @@
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 .address-button.p-button.p-button-text:enabled:hover {
   color: #4f93d7;
   background-color: var(--color-primary-light);
@@ -83,12 +85,14 @@
 .address-button .pi {
   color: inherit;
 }
+
 .address-button.p-button:hover {
-   color: #4f93d7;
-   background-color: #ffffff;
+  color: #4f93d7;
+  background-color: #ffffff;
 }
+
 .address-button .pi {
-   font-size: 14px;
+  font-size: 14px;
 }
 
 
@@ -111,6 +115,7 @@
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(142, 197, 255, 0.18);
 }
+
 /* ورودی PrimeNG */
 .search-input.p-inputtext {
   width: 100%;
@@ -119,7 +124,7 @@
   padding: 0 28px 0 72px;
 
   box-sizing: border-box;
-color: #4f93d7;
+  color: #4f93d7;
   background-color: transparent;
 
   border: none;
@@ -144,7 +149,7 @@ color: #4f93d7;
 /* زمانی که ورودی فوکوس دارد */
 .search-box:focus-within {
   color: #4f93d7;
-  box-shadow:0 0 0 3px var(--color-text-soft);
+  box-shadow: 0 0 0 3px var(--color-text-soft);
 }
 
 /* placeholder دو رنگ */
@@ -181,7 +186,7 @@ color: #4f93d7;
   display: flex;
   align-items: center;
   justify-content: center;
-   color: var(--color-text);
+  color: var(--color-text);
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -330,4 +335,12 @@ color: #4f93d7;
   .search-button .pi {
     font-size: 22px;
   }
+}
+
+@font-face {
+  font-family: 'YekanFont';
+  src: url('/assets/fonts/Yekan.woff') format('woff2'),
+    url('/assets/fonts/Yekan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
