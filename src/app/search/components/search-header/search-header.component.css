@@ -344,3 +344,30 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.menu-toggle-btn.p-button {
+  position: absolute;
+  top: 26px;
+  right: 54px;
+  /* قرینه left:54px دکمه سبد خرید (چون راست‌چین است) */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.menu-toggle-btn .pi {
+  font-size: 32px;
+  /* همان اندازه دکمه سبد خرید */
+}
+
+.menu-toggle-btn.p-button:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-extra-light);
+}

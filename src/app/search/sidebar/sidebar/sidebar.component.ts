@@ -16,7 +16,7 @@ export class SidebarComponent {
             label: 'ورود به حساب',
             items: [
                 { label: 'ورود به حساب کاربری', icon: 'pi-user' },
-                { label: 'ورود به حساب فروشگاه', icon: 'pi-shop' },
+                { label: 'ورود به حساب فروشگاه', icon: 'pi-building' },
                 // { label: 'Team', icon: 'pi-users' },
                 // { label: 'Messages', icon: 'pi-comments', },
                 // { label: 'Calendar', icon: 'pi-calendar' },
