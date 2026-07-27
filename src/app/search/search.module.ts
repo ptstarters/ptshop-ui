@@ -7,14 +7,14 @@ import { SearchHeaderComponent } from './components/search-header/search-header.
 
 @NgModule({
   declarations: [
-    
+
     SearchHeaderComponent
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
-  exports:[
+  exports: [
     SearchHeaderComponent
   ]
 })

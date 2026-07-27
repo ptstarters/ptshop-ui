@@ -1,0 +1,69 @@
+<h1>ثبت نام فروشندگان</h1>
+
+
+
+<div class="card flex justify-content-center">
+    <p-dropdown [options]="businessTypes" [(ngModel)]="selectedBusinessType" optionLabel="name"
+        placeholder="انتخاب نوع کسب و کار" />
+</div>
+
+
+<div class="card flex justify-content-center">
+    <p-cascadeSelect [(ngModel)]="selectedCity" [options]="countries" optionLabel="cname" optionGroupLabel="name"
+        [optionGroupChildren]="['states', 'cities']" [style]="{ minWidth: '14rem' }" placeholder="انتخاب شهر" />
+</div>
+
+
+<div class="card">
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+        </span>
+        <input type="text" pInputText placeholder="نام کامل فروشگاه" />
+    </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-user-edit"></i>
+        </span>
+        <input type="text" pInputText placeholder="نام مالک فروشگاه" />
+    </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-user-edit"></i>
+        </span>
+        <input type="text" pInputText placeholder="نام خانوادگی مالک فروشگاه" />
+    </div>
+
+
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-mobile"></i>
+        </span>
+        <input type="text" pInputText placeholder="شماره تلفن همراه مالک" />
+    </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-lock"></i>
+        </span>
+        <input type="password" pInputText placeholder="رمز عبور" />
+    </div>
+
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-check-circle"></i>
+        </span>
+        <input type="password" pInputText placeholder="تکرار رمز عبور" />
+    </div>
+
+
+
+
+    <div class="Submit-button">
+        <p-button label="ثبت‌نام" />
+    </div>
+</div>
