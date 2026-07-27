@@ -9,12 +9,12 @@
   width: calc(100% - 48px);
   max-width: 1440px;
   min-height: 190px;
-  margin: 0 auto;
+  margin: 20px;
   padding: 24px 32px 28px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--color-border);
-  border-radius: 0 0 28px 28px;
+  border-radius: 9999px;
   box-shadow: 0 8px 25px var(--color-shadow);
   backdrop-filter: blur(4px);
 }
@@ -22,8 +22,8 @@
 /* دکمه سبد خرید */
 .cart-button.p-button {
   position: absolute;
-  top: 16px;
-  left: 24px;
+  top: 26px;
+  left: 54px;
   width: 44px;
   height: 44px;
   padding: 0;

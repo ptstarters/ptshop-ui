@@ -145,7 +145,7 @@
 }
 
 .mobile-input.p-inputtext:focus {
- background-color: #ffffff;
+  background-color: #ffffff;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(142, 197, 255, 0.18);
 }
@@ -155,7 +155,7 @@
 .terms-text {
   margin: 18px 0 0;
 
-   color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
 
   font-size: 12px;
   line-height: 2;
@@ -191,7 +191,7 @@
   align-items: center;
   justify-content: center;
 
-   color: #ffffff;
+  color: #ffffff;
   background-color: var(--color-primary);
   border: none;
   border-radius: 13px;
@@ -210,13 +210,13 @@
 }
 
 .continue-button.p-button:enabled:hover {
-    background-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
   box-shadow: 0 5px 14px rgba(109, 168, 228, 0.2);
 }
 
 .continue-button.p-button:disabled,
 .continue-button.p-button.p-disabled {
- color: #8ea1b3;
+  color: #8ea1b3;
   background-color: #dfeaf4;
 
   opacity: 1;
@@ -289,4 +289,12 @@
   .continue-button.p-button {
     height: 48px;
   }
+}
+
+@font-face {
+  font-family: 'YekanFont';
+  src: url('/assets/fonts/Yekan.woff') format('woff2'),
+    url('/assets/fonts/Yekan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

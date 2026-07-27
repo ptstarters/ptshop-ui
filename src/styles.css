@@ -21,14 +21,12 @@
 }
 
 
-body {}
 
 
 
 
 
 :root {
-  --app-font: 'YekanFont', Tahoma, Arial, sans-serif;
   --color-primary: #8ec5ff;
   --color-primary-dark: #6aaeea;
   --color-primary-light: #dff1ff;
@@ -67,7 +65,7 @@ html {
 }
 
 body {
-  font-family: 'Vazirmatn Variable', Tahoma, Arial, sans-serif;
+  font-family: 'YekanFont', Tahoma, Arial, sans-serif;
   color: var(--color-text);
   background-color: #f6fbff;
 
