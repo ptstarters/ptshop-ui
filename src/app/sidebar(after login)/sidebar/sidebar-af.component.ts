@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-sidebar-after',
-    templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.css']
+    selector: 'app-sidebarr-after',
+    templateUrl: './sidebar-af.component.html',
+    styleUrls: ['sidebar-af.component.css']
 })
 
 
-export class SidebarComponent {
+export class SidebarAfComponent {
     sidebarVisible = false;
 
     // ساختار منو (همانند کد اصلی اما به صورت داده)
@@ -15,8 +15,8 @@ export class SidebarComponent {
         {
             label: 'ورود به حساب',
             items: [
-                { label: 'ورود به حساب کاربری', icon: 'pi-user' },
-                { label: 'ورود به حساب فروشگاه', icon: 'pi-shop' },
+                { label: 'ورود به حساب کاربری', icon: 'pi-user', link: 'login/user' },
+                { label: 'ورود به حساب فروشگاه', icon: 'pi-shop', link: '' },
                 // { label: 'Team', icon: 'pi-users' },
                 // { label: 'Messages', icon: 'pi-comments', },
                 // { label: 'Calendar', icon: 'pi-calendar' },

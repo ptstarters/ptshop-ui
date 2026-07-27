@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-sidebar',
@@ -15,7 +16,7 @@ export class SidebarComponent {
         {
             label: 'ورود به حساب',
             items: [
-                { label: 'ورود به حساب کاربری', icon: 'pi-user' },
+                { label: 'ورود به حساب کاربری', icon: 'pi-user', link: '/login' },
                 { label: 'ورود به حساب فروشگاه', icon: 'pi-building' },
                 // { label: 'Team', icon: 'pi-users' },
                 // { label: 'Messages', icon: 'pi-comments', },
@@ -33,12 +34,21 @@ export class SidebarComponent {
         }
     ];
 
-    // متد برای باز/بسته کردن زیرمنوها
-    toggleExpand(item: any) {
+    constructor(private router: Router) { }
+
+
+    onItemClick(item: any) {
         if (item.children) {
+            // اگر زیرمنو دارد، آن را باز/بسته کن
             item.expanded = !item.expanded;
+        } else if (item.link) {
+            // به مسیر مشخص شده هدایت شو
+            this.router.navigate([item.link]);
+            // سایدبار را ببند (اختیاری)
+            this.sidebarVisible = false;
         }
     }
+
 
     closeCallback(event: any) {
         this.sidebarVisible = false;
