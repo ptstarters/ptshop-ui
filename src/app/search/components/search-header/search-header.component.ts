@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ViewChild } from '@angular/core';
+import { SidebarComponent } from '../../sidebar/sidebar/sidebar.component';
+
 
 @Component({
   selector: 'app-search-header',
@@ -8,8 +11,20 @@ import { Router } from '@angular/router';
 })
 export class SearchHeaderComponent {
   searchValue: string = '';
+  sidebarVisible = false;
 
-  constructor(private router: Router) {}
+  // 2. به کامپوننت سایدبار دسترسی پیدا کن
+  @ViewChild(SidebarComponent) sidebarComponent!: SidebarComponent;
+
+  // 3. متد باز کردن سایدبار
+  onOpenSidebar() {
+    this.sidebarVisible = true;
+    if (this.sidebarComponent) {
+      this.sidebarComponent.sidebarVisible = true; // مقدار visibility رو در خود سایدبار هم ست کن
+    }
+  }
+
+  constructor(private router: Router) { }
 
   onSelectAddress(): void {
     console.log('دکمه انتخاب آدرس کلیک شد');

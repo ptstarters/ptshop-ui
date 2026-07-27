@@ -1,0 +1,207 @@
+/* ============================================
+   سایدبار اصلی
+   ============================================ */
+::ng-deep .p-sidebar {
+    width: 300px !important;
+    background: var(--surface-card);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 0;
+}
+
+/* ============================================
+   هدر سایدبار (لوگو و دکمه بستن)
+   ============================================ */
+.sidebar-header {
+    border-bottom: 1px solid var(--surface-border);
+    padding: 1rem 1.5rem;
+}
+
+.sidebar-header .logo-text {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+/* ============================================
+   آیتم‌های منو
+   ============================================ */
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    color: var(--text-color-secondary);
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background: var(--surface-hover);
+    color: var(--text-color);
+}
+
+.menu-item.active {
+    background: var(--primary-50);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.menu-item .pi {
+    direction: rtl;
+    font-size: 1.1rem;
+    width: 1.5rem;
+    text-align: center;
+    margin-right: 0.75rem;
+}
+
+.menu-item .pi-chevron-down {
+    margin-left: auto;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.menu-item .pi-chevron-down.rotated {
+    transform: rotate(-180deg);
+}
+
+/* ============================================
+   زیرمنوها (کشویی)
+   ============================================ */
+.submenu {
+    padding-left: 1.5rem;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submenu.open {
+    max-height: 1000px;
+    /* مقدار کافی برای نمایش تمام آیتم‌ها */
+}
+
+.submenu .menu-item {
+    padding-left: 2.5rem;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   نشانگر (Badge)
+   ============================================ */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 0.4rem;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+/* ============================================
+   بخش پروفایل (پایین سایدبار)
+   ============================================ */
+.profile-section {
+    border-top: 1px solid var(--surface-border);
+    padding: 1rem 1.5rem;
+    margin-top: auto;
+}
+
+.profile-section .profile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background 0.15s ease;
+}
+
+.profile-section .profile-link:hover {
+    background: var(--surface-hover);
+}
+
+.profile-section .profile-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   عنوان بخش‌ها (FAVORITES / APPLICATION)
+   ============================================ */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    color: var(--text-color-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.section-title:hover {
+    color: var(--text-color);
+}
+
+.section-title .pi-chevron-down {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.section-title .pi-chevron-down.rotated {
+    transform: rotate(-180deg);
+}
+
+/* ============================================
+   کلاس‌های کمکی برای انیمیشن کشویی (در صورت عدم استفاده از pStyleClass)
+   ============================================ */
+.hidden {
+    display: none !important;
+}
+
+.slidedown {
+    display: block !important;
+    animation: slideDown 0.3s ease forwards;
+}
+
+.slideup {
+    display: block !important;
+    animation: slideUp 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        max-height: 500px;
+    }
+
+    to {
+        opacity: 0;
+        max-height: 0;
+    }
+}

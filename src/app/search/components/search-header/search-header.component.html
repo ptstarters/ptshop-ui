@@ -1,4 +1,7 @@
 <header class="search-header">
+  <button pButton type="button" class="menu-toggle-btn p-button-text" (click)="onOpenSidebar()">
+    <i class="pi pi-bars"></i>
+  </button>
   <!-- دکمه سبد خرید -->
   <button pButton type="button" class="cart-button p-button-text" aria-label="مشاهده سبد خرید" (click)="onOpenCart()">
     <i class="pi pi-shopping-cart"></i>
@@ -26,3 +29,4 @@
     </button>
   </div>
 </header>
+<app-sidebar></app-sidebar>

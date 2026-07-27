@@ -1,0 +1,80 @@
+<div class="card flex justify-content-center">
+    <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
+        <ng-template pTemplate="headless">
+            <div class="flex flex-column h-full">
+
+                <!-- هدر ثابت -->
+                <div class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0">
+                    <span class="inline-flex align-items-center gap-2">
+                        <svg width="33" height="35" viewBox="0 0 33 35" fill="none" ...>
+                            <!-- لوگو (همان SVG اصلی) -->
+                        </svg>
+                        <span class="font-semibold text-2xl text-primary">پارس فود</span>
+                    </span>
+
+
+
+                </div>
+
+                <!-- منوی اصلی (حلقه روی بخش‌ها) -->
+                <div class="overflow-y-auto">
+                    <ul class="list-none p-3 m-0" *ngFor="let section of menuSections">
+                        <li>
+                            <!-- عنوان بخش با قابلیت جمع/باز شدن -->
+                            <div pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown"
+                                leaveToClass="hidden" leaveActiveClass="slideup"
+                                class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple">
+                                <span class="font-medium">{{ section.label }}</span>
+                                <i class="pi pi-chevron-down"></i>
+                            </div>
+                            <!-- لیست آیتم‌های آن بخش -->
+                            <ul class="list-none p-0 m-0 overflow-hidden">
+                                <ng-container *ngFor="let item of section.items">
+                                    <ng-container
+                                        *ngTemplateOutlet="menuItem; context: { $implicit: item }"></ng-container>
+                                </ng-container>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- بخش پایین (پروفایل کاربر) -->
+                <div class="mt-auto">
+                    <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+                    <a pRipple class="m-3 flex align-items-center cursor-pointer p-3 gap-2 border-round
+                          text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                            shape="circle" />
+                        <span class="font-bold">Amy Elsner</span>
+                    </a>
+                </div>
+
+            </div>
+        </ng-template>
+    </p-sidebar>
+
+    <!-- دکمه باز کردن سایدبار -->
+    <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
+</div>
+
+<!-- قالب بازگشتی برای آیتم‌های منو (با قابلیت زیرمنو) -->
+<ng-template #menuItem let-item>
+    <li>
+        <a pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700
+                     hover:surface-100 transition-duration-150 transition-colors p-ripple"
+            (click)="toggleExpand(item)">
+            <i class="pi {{ item.icon }} mr-2"></i>
+            <span class="font-medium">{{ item.label }}</span>
+            <i *ngIf="item.children" class="pi pi-chevron-down ml-auto"></i>
+            <span *ngIf="item.badge"
+                class="inline-flex align-items-center justify-content-center ml-auto bg-primary border-circle"
+                style="min-width: 1.5rem; height: 1.5rem">{{ item.badge }}</span>
+        </a>
+        <!-- زیرمنوها (در صورت وجود) -->
+        <ul *ngIf="item.children && item.expanded" class="list-none py-0 pl-3 pr-0 m-0">
+            <ng-container *ngFor="let child of item.children">
+                <ng-container *ngTemplateOutlet="menuItem; context: { $implicit: child }"></ng-container>
+            </ng-container>
+        </ul>
+    </li>
+</ng-template>
