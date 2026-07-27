@@ -2,6 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import {
+  AuthResponse,
+  StoreLoginRequest,
+  StoreSignupRequest,
+  
+} from './auth.models';
+
+export { AuthResponse, StoreLoginRequest, StoreSignupRequest };
+
 export interface LoginRequest {
   mobileNumber: string;
 }
@@ -24,9 +33,6 @@ export class AuthService {
       mobileNumber: mobileNumber,
     };
 
-    return this.http.post<LoginResponse>(
-      `${this.apiUrl}/login`,
-      body
-    );
+    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, body);
   }
 }
