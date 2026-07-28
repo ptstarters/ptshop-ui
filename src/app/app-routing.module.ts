@@ -5,61 +5,26 @@ import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './search/sidebar/sidebar/sidebar.component';
 import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
 import { UserSignUpComponent } from './user/user sign up panel/user-signup.component';
+import { StoreLoginComponent } from './store/store login panel/store-login.component';
+import { StoreSignUpComponent } from './store/store sign up panel/store-signup.component';
 import { TermsComponent } from './pages/terms/terms.component';
+import { SupermarketComponent } from './pages/supermarket/supermarket.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: 'empty-cart',
-    component: EmptyCartComponent,
-  },
-  {
-    path: 'terms',
-    component:TermsComponent,
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: UserSignUpComponent },
+  { path: 'empty-cart', component: EmptyCartComponent },
+  { path: 'menuSections', component: SidebarComponent },
+  { path: 'login-store', component: StoreLoginComponent },
+  { path: 'resister-store', component: StoreSignUpComponent },
+  { path: 'terms', component: TermsComponent },
+  { path: 'supermarket', component: SupermarketComponent },
 
-  },
-  {
-    path: '**',
-    redirectTo: '',
-  },
+  // مسیر پیش‌فرض (خانه)
+  { path: '', component: HomeComponent, pathMatch: 'full' },
 
-  {
-    path: 'menuSections',
-    component: SidebarComponent,
-    pathMatch: 'prefix',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: '**',
-    redirectTo: '',
-  },
-
-  {
-    path: 'register',
-    component: UserSignUpComponent,
-  },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full',
-  },
-  {
-    path: '**',
-    redirectTo: '/login',
-  }, // مسیر ناموجود
+  // مسیر ناموجود (همیشه آخرین باشد)
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

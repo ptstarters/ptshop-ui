@@ -1,0 +1,161 @@
+<app-search-header></app-search-header>
+
+<div class="supermarket-page" dir="rtl">
+  <main class="supermarket-container">
+    <section class="market-toolbar">
+      <button
+        type="button"
+        class="back-button"
+        aria-label="بازگشت"
+        (click)="goBack()"
+      >
+        →
+      </button>
+
+      <div class="market-title">
+        <span class="market-title-icon">🛒</span>
+
+        <div>
+          <h1>سوپرمارکت پارس فود</h1>
+          <p>خرید سریع و آسان از فروشگاه‌های اطراف شما</p>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <span>🛍️</span>
+        <span>سبد خرید</span>
+        <strong>{{ cartCount }}</strong>
+      </div>
+    </section>
+
+    <section class="offer-section">
+      <header class="offer-header">
+        <div>
+          <span class="offer-badge">پیشنهاد ویژه</span>
+          <h2>ویژه خرید اول</h2>
+        </div>
+
+        <span class="offer-description">
+          تخفیف‌های امروز پارس فود
+        </span>
+      </header>
+
+      <div class="products-row">
+        <article
+          *ngFor="let product of products; trackBy: trackProduct"
+          class="product-card"
+        >
+          <span
+            *ngIf="product.discount"
+            class="discount-badge"
+          >
+            {{ product.discount }}
+          </span>
+
+          <div class="product-image">
+            {{ product.icon }}
+          </div>
+
+          <h3>{{ product.title }}</h3>
+
+          <div class="product-price-row">
+            <div class="price-information">
+              <strong>{{ product.price }}</strong>
+
+              <del *ngIf="product.oldPrice">
+                {{ product.oldPrice }}
+              </del>
+            </div>
+
+            <button
+              type="button"
+              class="add-product-button"
+              (click)="addToCart()"
+            >
+              +
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <header class="section-heading">
+        <div>
+          <span class="section-small-title">
+            دسته‌بندی محصولات
+          </span>
+
+          <h2>خرید از دسته‌بندی‌ها</h2>
+        </div>
+
+        <button type="button" class="view-all-button">
+          مشاهده همه
+          <span>←</span>
+        </button>
+      </header>
+
+      <div class="category-grid">
+        <button
+          *ngFor="let category of categories; trackBy: trackCategory"
+          type="button"
+          class="category-item"
+        >
+          <span class="category-icon">
+            {{ category.icon }}
+          </span>
+
+          <span class="category-title">
+            {{ category.title }}
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <header class="section-heading">
+        <div>
+          <span class="section-small-title">
+            ارسال سریع
+          </span>
+
+          <h2>فروشگاه‌های اطراف شما</h2>
+        </div>
+
+        <button type="button" class="view-all-button">
+          مشاهده همه
+          <span>←</span>
+        </button>
+      </header>
+
+      <div class="stores-grid">
+        <article
+          *ngFor="let store of stores; trackBy: trackStore"
+          class="store-card"
+        >
+          <div class="store-icon">
+            {{ store.icon }}
+          </div>
+
+          <div class="store-information">
+            <h3>{{ store.name }}</h3>
+
+            <p>
+              ⏱
+              {{ store.deliveryTime }}
+            </p>
+
+            <p>
+              🚚
+              {{ store.deliveryPrice }}
+            </p>
+          </div>
+
+          <button type="button" class="open-store-button">
+            مشاهده فروشگاه
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>

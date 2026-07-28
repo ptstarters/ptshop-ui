@@ -1,373 +1,131 @@
 :host {
   display: block;
-  font-family: 'YekanFont', sans-serif;
 }
 
-/* بخش اصلی header */
 .search-header {
-  position: relative;
-  width: calc(100% - 48px);
-  max-width: 1440px;
-  min-height: 190px;
-  margin: 20px;
-  padding: 24px 32px 28px;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--color-border);
-  border-radius: 9999px;
-  box-shadow: 0 8px 25px var(--color-shadow);
-  backdrop-filter: blur(4px);
-}
+  width: 100%;
+  padding: 16px 24px;
 
-/* دکمه سبد خرید */
-.cart-button.p-button {
-  position: absolute;
-  top: 26px;
-  left: 54px;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-.cart-button .pi {
-  font-size: 26px;
-}
-
-.cart-button.p-button:hover {
-  color: var(--color-primary-dark);
-  background-color: var(--color-primary-extra-light);
-}
-
-.cart-button .pi {
-  font-size: 32px;
-}
-
-/* دکمه انتخاب آدرس */
-.address-button.p-button.p-button-text {
-  position: absolute;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  direction: rtl;
-  gap: 8px;
-  padding: 10px 16px;
-  color: var(--color-primary-dark);
-  background-color: var(--color-primary-extra-light);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  box-shadow: none;
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 600;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.address-button.p-button.p-button-text:enabled:hover {
-  color: #4f93d7;
-  background-color: var(--color-primary-light);
-  border: 1px solid var(--color-border);
-  box-shadow: none;
-}
-
-.address-button .pi {
-  color: inherit;
-}
-
-.address-button.p-button:hover {
-  color: #4f93d7;
   background-color: #ffffff;
+  border-bottom: 1px solid #dfe8eb;
+
+  box-shadow: 0 5px 20px rgb(62 91 105 / 6%);
 }
 
-.address-button .pi {
+.search-header-container {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: auto minmax(240px, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-right-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-logo {
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+
+  color: #5794cd;
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.header-search-box {
+  width: 100%;
+}
+
+.header-search-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 18px;
+
+  border: 1px solid #d7e3e7;
+  border-radius: 16px;
+  outline: none;
+  background-color: #f5f9fa;
+
+  color: #293138;
+  font-family: inherit;
   font-size: 14px;
 }
 
+.header-search-input:focus {
+  border-color: #72a9dc;
+  background-color: #ffffff;
 
-/* کادر جست و جو */
-
-.search-box {
-  position: absolute;
-  right: 48px;
-  bottom: 32px;
-  left: 48px;
-  height: 64px;
-  background-color: var(--color-surface-soft);
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(142, 197, 255, 0.12);
+  box-shadow: 0 0 0 3px rgb(114 169 220 / 14%);
 }
 
-.search-box:focus-within {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(142, 197, 255, 0.18);
-}
-
-/* ورودی PrimeNG */
-.search-input.p-inputtext {
-  width: 100%;
-  height: 100%;
-
-  padding: 0 28px 0 72px;
-
-  box-sizing: border-box;
-  color: #4f93d7;
-  background-color: transparent;
-
-  border: none;
-  border-radius: 20px;
-  outline: none;
-  box-shadow: none;
-  direction: rtl;
-  text-align: right;
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 64px;
-
-  appearance: none;
-}
-
-/* حذف استایل فوکوس پیش‌فرض PrimeNG */
-.search-input.p-inputtext:enabled:focus {
-  border: none;
-  box-shadow: none;
-}
-
-/* زمانی که ورودی فوکوس دارد */
-.search-box:focus-within {
-  color: #4f93d7;
-  box-shadow: 0 0 0 3px var(--color-text-soft);
-}
-
-/* placeholder دو رنگ */
-.custom-placeholder {
-  position: absolute;
-  top: 0;
-  right: 28px;
-  bottom: 0;
+.header-actions {
   display: flex;
   align-items: center;
-  gap: 7px;
-  color: var(--color-text-soft);
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 400;
-  pointer-events: none;
+  gap: 10px;
 }
 
-.custom-placeholder strong {
-  color: var(--color-primary-dark);
-  font-size: 20px;
+.header-action-button {
+  min-height: 44px;
+  padding: 9px 16px;
+
+  border: 1px solid #d7e3e7;
+  border-radius: 14px;
+  background-color: #ffffff;
+
+  color: #4a5960;
+  font-family: inherit;
+  font-size: 13px;
   font-weight: 700;
+
+  cursor: pointer;
 }
 
-/* دکمه جستجو */
-.search-button.p-button {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  box-shadow: none;
+.header-action-button:hover {
+  border-color: #a9cae6;
+  background-color: #eef6fc;
 }
 
-.search-button .pi {
-  font-size: 25px;
+.cart-button {
+  border-color: #72a9dc;
+  background-color: #72a9dc;
+  color: #ffffff;
 }
 
-.search-button .pi {
-  font-size: 25px;
+.cart-button:hover {
+  background-color: #5794cd;
+  color: #ffffff;
 }
 
-.search-button.p-button:hover {
-  color: var(--color-primary-dark);
-  background-color: var(--color-primary-extra-light);
-}
-
-.search-button .pi {
-  font-size: 25px;
-}
-
-/* حالت تبلت */
-@media screen and (max-width: 768px) {
+@media (max-width: 800px) {
   .search-header {
-    width: calc(100% - 24px);
-    min-height: 220px;
-    margin: 12px auto;
-    padding: 18px 16px 20px;
-    border-radius: 20px 20px 0 0;
+    padding: 12px;
   }
 
-  .cart-button.p-button {
-    top: 18px;
-    left: 16px;
-    width: 46px;
-    height: 46px;
+  .search-header-container {
+    grid-template-columns: 1fr auto;
   }
 
-  .cart-button .pi {
-    font-size: 27px;
+  .header-search-box {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
-  .address-button.p-button {
-    top: 16px;
-    padding: 10px 12px;
-    font-size: 19px;
-  }
-
-  .address-button .pi {
-    font-size: 15px;
-  }
-
-  .search-box {
-    right: 16px;
-    bottom: 26px;
-    left: 16px;
-    height: 70px;
-  }
-
-  .search-input.p-inputtext {
-    padding-right: 22px;
-    padding-left: 70px;
-    font-size: 18px;
-  }
-
-  .custom-placeholder {
-    right: 22px;
+  .header-actions {
     gap: 6px;
-    font-size: 18px;
   }
 
-  .custom-placeholder strong {
-    font-size: 20px;
+  .header-action-button {
+    padding: 8px 10px;
+    font-size: 11px;
   }
-
-  .search-button.p-button {
-    left: 10px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .search-button .pi {
-    font-size: 25px;
-  }
-}
-
-/* حالت موبایل */
-@media screen and (max-width: 480px) {
-  .search-header {
-    width: calc(100% - 16px);
-    min-height: 190px;
-    margin: 8px auto;
-    border-radius: 16px 16px 0 0;
-  }
-
-  .cart-button.p-button {
-    top: 14px;
-    left: 10px;
-    width: 42px;
-    height: 42px;
-  }
-
-  .cart-button .pi {
-    font-size: 24px;
-  }
-
-  .address-button.p-button {
-    top: 14px;
-    gap: 6px;
-    padding: 8px;
-    font-size: 16px;
-  }
-
-  .search-box {
-    right: 10px;
-    bottom: 22px;
-    left: 10px;
-    height: 62px;
-    border-radius: 10px;
-  }
-
-  .search-input.p-inputtext {
-    padding-right: 16px;
-    padding-left: 58px;
-    font-size: 15px;
-  }
-
-  .custom-placeholder {
-    right: 16px;
-    gap: 4px;
-    font-size: 15px;
-  }
-
-  .custom-placeholder strong {
-    font-size: 17px;
-  }
-
-  .search-button.p-button {
-    left: 6px;
-    width: 44px;
-    height: 44px;
-  }
-
-  .search-button .pi {
-    font-size: 22px;
-  }
-}
-
-@font-face {
-  font-family: 'YekanFont';
-  src: url('/assets/fonts/Yekan.woff') format('woff2'),
-    url('/assets/fonts/Yekan.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.menu-toggle-btn.p-button {
-  position: absolute;
-  top: 26px;
-  right: 54px;
-  /* قرینه left:54px دکمه سبد خرید (چون راست‌چین است) */
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-.menu-toggle-btn .pi {
-  font-size: 32px;
-  /* همان اندازه دکمه سبد خرید */
-}
-
-.menu-toggle-btn.p-button:hover {
-  color: var(--color-primary-dark);
-  background-color: var(--color-primary-extra-light);
 }

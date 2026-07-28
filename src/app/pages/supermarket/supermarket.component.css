@@ -1,0 +1,538 @@
+:host {
+  display: block;
+
+  --market-primary: #72a9dc;
+  --market-primary-dark: #5794cd;
+  --market-background: #eef5f7;
+  --market-card: #ffffff;
+  --market-text: #293138;
+  --market-muted: #7a878d;
+  --market-border: #dce7ea;
+  --market-soft-blue: #eaf4fc;
+}
+
+.supermarket-page {
+  min-height: 100vh;
+  padding: 30px 20px 70px;
+
+  background-color: var(--market-background);
+  color: var(--market-text);
+}
+
+.supermarket-container {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+/* سربرگ */
+.market-toolbar {
+  min-height: 105px;
+  margin-bottom: 24px;
+  padding: 22px 28px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+
+  background-color: rgb(255 255 255 / 95%);
+  border: 1px solid var(--market-border);
+  border-top: 4px solid var(--market-primary);
+  border-radius: 26px;
+
+  box-shadow: 0 12px 35px rgb(74 105 120 / 8%);
+}
+
+.back-button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  background-color: var(--market-soft-blue);
+
+  color: var(--market-text);
+  font-family: inherit;
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #dbeefa;
+}
+
+.market-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.market-title-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+  background-color: var(--market-soft-blue);
+
+  font-size: 30px;
+}
+
+.market-title h1 {
+  margin: 0 0 7px;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.market-title p {
+  margin: 0;
+
+  color: var(--market-muted);
+  font-size: 14px;
+}
+
+.cart-summary {
+  min-height: 48px;
+  padding: 10px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  border: 1px solid var(--market-border);
+  border-radius: 15px;
+  background-color: #f8fbfc;
+
+  color: #536168;
+  font-size: 14px;
+}
+
+.cart-summary strong {
+  min-width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background-color: var(--market-primary);
+
+  color: #ffffff;
+  font-size: 12px;
+}
+
+/* پیشنهاد ویژه */
+.offer-section {
+  margin-bottom: 28px;
+  padding: 28px;
+
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    #74afe3,
+    #a6d1ed
+  );
+
+  box-shadow: 0 14px 35px rgb(80 130 170 / 17%);
+}
+
+.offer-header {
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: #ffffff;
+}
+
+.offer-header h2 {
+  margin: 10px 0 0;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.offer-badge {
+  display: inline-block;
+  padding: 5px 12px;
+
+  border-radius: 20px;
+  background-color: rgb(255 255 255 / 22%);
+
+  font-size: 12px;
+}
+
+.offer-description {
+  font-size: 14px;
+}
+
+.products-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.product-card {
+  position: relative;
+  min-width: 150px;
+  padding: 15px;
+
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 20px;
+  background-color: rgb(255 255 255 / 96%);
+
+  box-shadow: 0 8px 20px rgb(50 90 120 / 10%);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 4px 8px;
+
+  border-radius: 10px;
+  background-color: #f08d8d;
+
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-image {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+  background-color: #f4f8fa;
+
+  font-size: 46px;
+}
+
+.product-card h3 {
+  min-height: 42px;
+  margin: 12px 0;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.price-information {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.price-information strong {
+  font-size: 12px;
+}
+
+.price-information del {
+  color: #a2aaae;
+  font-size: 10px;
+}
+
+.add-product-button {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+  background-color: var(--market-soft-blue);
+
+  color: var(--market-primary-dark);
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+.add-product-button:hover {
+  background-color: var(--market-primary);
+  color: #ffffff;
+}
+
+/* قسمت‌های عمومی صفحه */
+.page-section {
+  margin-bottom: 28px;
+  padding: 28px;
+
+  border: 1px solid var(--market-border);
+  border-radius: 28px;
+  background-color: var(--market-card);
+
+  box-shadow: 0 12px 32px rgb(72 99 112 / 7%);
+}
+
+.section-heading {
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section-heading h2 {
+  margin: 6px 0 0;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.section-small-title {
+  color: var(--market-primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.view-all-button {
+  padding: 8px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  background-color: transparent;
+
+  color: var(--market-primary-dark);
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+/* دسته‌بندی‌ها */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(100px, 1fr));
+  gap: 14px;
+}
+
+.category-item {
+  padding: 14px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background-color: #f8fbfc;
+
+  color: var(--market-text);
+  font-family: inherit;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-4px);
+
+  border-color: #c7deee;
+  background-color: var(--market-soft-blue);
+}
+
+.category-icon {
+  width: 66px;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  background-color: #ffffff;
+
+  font-size: 34px;
+}
+
+.category-title {
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* فروشگاه‌ها */
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.store-card {
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+
+  border: 1px solid var(--market-border);
+  border-radius: 20px;
+  background-color: #fbfdfd;
+}
+
+.store-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+  background-color: var(--market-soft-blue);
+
+  font-size: 31px;
+}
+
+.store-information h3 {
+  margin: 0 0 10px;
+
+  font-size: 16px;
+}
+
+.store-information p {
+  margin: 5px 0;
+
+  color: var(--market-muted);
+  font-size: 12px;
+}
+
+.open-store-button {
+  grid-column: 1 / -1;
+
+  min-height: 42px;
+
+  border: none;
+  border-radius: 14px;
+  background-color: #d4e3e6;
+
+  color: #4d626a;
+  font-family: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.open-store-button:hover {
+  background-color: var(--market-primary);
+  color: #ffffff;
+}
+
+/* تبلت */
+@media (max-width: 1050px) {
+  .products-row {
+    grid-template-columns: repeat(6, 155px);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .stores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* موبایل */
+@media (max-width: 700px) {
+  .supermarket-page {
+    padding: 15px 10px 45px;
+  }
+
+  .market-toolbar {
+    padding: 18px;
+
+    grid-template-columns: auto 1fr;
+    border-radius: 22px;
+  }
+
+  .cart-summary {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .market-title-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 25px;
+  }
+
+  .market-title h1 {
+    font-size: 20px;
+  }
+
+  .market-title p {
+    font-size: 12px;
+  }
+
+  .offer-section,
+  .page-section {
+    padding: 20px 15px;
+    border-radius: 22px;
+  }
+
+  .offer-header,
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .products-row {
+    grid-template-columns: repeat(6, 150px);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .category-icon {
+    width: 55px;
+    height: 55px;
+
+    font-size: 28px;
+  }
+
+  .stores-grid {
+    grid-template-columns: 1fr;
+  }
+}

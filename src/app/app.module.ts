@@ -11,14 +11,15 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
 import { FooterModule } from './footer/footer.module';
-import { SearchModule } from './search/search.module';
-import { CategoriesModule } from './categories/categories.module';
+ import { CategoriesModule } from './categories/categories.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
-import { TermsComponent } from './pages/terms/terms.component';
+import { UserModule } from './user/user.module';
+import { StoreModule } from './store/store.module';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent, TermsComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,12 +29,15 @@ import { TermsComponent } from './pages/terms/terms.component';
     InputTextModule,
     RouterModule,
     FooterModule,
-    SearchModule,
     SharedModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule,
+    StoreModule,
+    SearchModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

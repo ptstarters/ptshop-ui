@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { SidebarComponent } from '../../sidebar/sidebar/sidebar.component';
 
-
 @Component({
   selector: 'app-search-header',
   templateUrl: './search-header.component.html',
@@ -12,6 +11,7 @@ import { SidebarComponent } from '../../sidebar/sidebar/sidebar.component';
 export class SearchHeaderComponent {
   searchValue: string = '';
   sidebarVisible = false;
+  searchText = '';
 
   // 2. به کامپوننت سایدبار دسترسی پیدا کن
   @ViewChild(SidebarComponent) sidebarComponent!: SidebarComponent;
@@ -24,7 +24,7 @@ export class SearchHeaderComponent {
     }
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   onSelectAddress(): void {
     console.log('دکمه انتخاب آدرس کلیک شد');
@@ -42,5 +42,16 @@ export class SearchHeaderComponent {
     }
 
     console.log('عبارت جستجو:', normalizedSearchValue);
+  }
+  openLogin(): void {
+    this.router.navigateByUrl('/login');
+  }
+
+  openCart(): void {
+    this.router.navigateByUrl('/empty-cart');
+  }
+
+  goHome(): void {
+    this.router.navigateByUrl('/');
   }
 }

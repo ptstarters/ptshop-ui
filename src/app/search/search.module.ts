@@ -1,23 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { SharedModule } from '../shared/shared.module';
+
 import { SearchHeaderComponent } from './components/search-header/search-header.component';
-import { SidebarModule } from "./sidebar/sidebar.module";
-
-
+import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [
-
-    SearchHeaderComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    SidebarModule
-  ],
-  exports: [
-    SearchHeaderComponent
-  ]
+  declarations: [SearchHeaderComponent, SidebarComponent],
+  imports: [SharedModule],
+  exports: [SearchHeaderComponent, SidebarComponent],
 })
-export class SearchModule { }
+export class SearchModule {}

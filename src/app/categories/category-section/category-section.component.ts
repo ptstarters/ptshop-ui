@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-interface CategoryItem {
+interface MainCategory {
   title: string;
   icon: string;
   badge?: string;
@@ -13,7 +14,7 @@ interface CategoryItem {
   styleUrls: ['./category-section.component.css'],
 })
 export class CategorySectionComponent {
-  mainCategories: CategoryItem[] = [
+  mainCategories: MainCategory[] = [
     {
       title: 'رستوران',
       icon: '🍔',
@@ -23,47 +24,46 @@ export class CategorySectionComponent {
       icon: '🛒',
     },
     {
-      title: 'کافه',
-      icon: '☕',
+      title: 'نانوایی',
+      icon: '🥖',
     },
     {
       title: 'شیرینی',
       icon: '🍰',
     },
     {
-      title: 'نانوایی',
-      icon: '🥖',
-    },
-    {
       title: 'میوه',
       icon: '🍎',
-      badge: 'گالری',
     },
     {
       title: 'پروتئین',
       icon: '🥩',
-      badge: 'گالری',
     },
     {
-      title: 'آبمیوه بستنی',
+      title: 'آبمیوه و بستنی',
       icon: '🍦',
     },
     {
-      title: 'آجیل',
-      icon: '🥜',
-    },
-    {
-      title: 'مشاهده همه',
+      title: 'بیشتر',
       icon: '•••',
       isMore: true,
     },
   ];
 
-  selectCategory(category: CategoryItem): void {
+  constructor(private router: Router) {}
+
+  selectCategory(category: MainCategory): void {
+    const normalizedTitle = category.title.replace(/\s+/g, '');
+
+    if (normalizedTitle === 'سوپرمارکت') {
+      this.router.navigateByUrl('/supermarket');
+      return;
+    }
+
     console.log('دسته‌بندی انتخاب‌شده:', category.title);
   }
 
-  trackByTitle(index: number, category: CategoryItem): string {
+  trackByTitle(index: number, category: MainCategory): string {
     return category.title;
   }
 }
