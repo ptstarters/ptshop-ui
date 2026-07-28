@@ -154,6 +154,7 @@
 
 .terms-text {
   margin: 18px 0 0;
+  text-align: center;
 
   color: var(--color-primary-dark);
 
@@ -234,6 +235,9 @@
   font-weight: 500;
   line-height: 1.8;
 }
+
+
+
 
 
 /* حالت موبایل */
