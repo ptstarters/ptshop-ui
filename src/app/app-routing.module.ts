@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './search/sidebar/sidebar/sidebar.component';
 
+import { UserSignUpComponent } from './user/user sign up panel/user-signup.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -34,6 +36,20 @@ const routes: Routes = [
     path: '**',
     redirectTo: '',
   },
+
+  {
+    path: 'register',
+    component: UserSignUpComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: '/login',
+  }, // مسیر ناموجود
 ];
 
 @NgModule({

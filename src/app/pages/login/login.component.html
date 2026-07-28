@@ -12,7 +12,8 @@
       <label for="mobileNumber"> شماره موبایل </label>
 
       <input id="mobileNumber" pInputText type="tel" class="mobile-input" inputmode="numeric" maxlength="11"
-        autocomplete="tel" [(ngModel)]="mobileNumber" />
+        autocomplete="tel" />
+      <!-- [(ngModel)]="mobileNumber" -->
     </div>
 
 
@@ -26,14 +27,21 @@
     </p>
   </div>
 
-  <h4>حساب کاربری ندارید؟</h4>
-  <div class="Submit-button">
-    <p-button label="ثبت‌ نام کنید" />
-  </div>
+
+
 
   <div class="login-actions">
     <button pButton type="button" class="continue-button" [disabled]="!isMobileValid" (click)="continueLogin()">
       ادامه
     </button>
+  </div>
+
+  <div>
+    <p class="terms-text">
+      حساب کاربری ندارید؟
+      <a routerLink="/register" class="terms-link">
+        ثبت نام کنید.
+      </a>
+    </p>
   </div>
 </section>
