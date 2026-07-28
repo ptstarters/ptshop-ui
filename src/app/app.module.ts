@@ -15,9 +15,10 @@ import { SearchModule } from './search/search.module';
 import { CategoriesModule } from './categories/categories.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent, TermsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

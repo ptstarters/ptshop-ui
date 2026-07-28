@@ -160,12 +160,20 @@
 }
 
 .terms-link {
-  color: #4e9bd4;
+  display: block;
+  margin-top: 18px;
+
+  color: #4149ba;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
   text-decoration: none;
+
   cursor: pointer;
 }
 
 .terms-link:hover {
+  color: #4f8fc9;
   text-decoration: underline;
 }
 

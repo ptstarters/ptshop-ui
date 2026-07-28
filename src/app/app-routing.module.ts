@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './search/sidebar/sidebar/sidebar.component';
 import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
 import { UserSignUpComponent } from './user/user sign up panel/user-signup.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,11 @@ const routes: Routes = [
   {
     path: 'empty-cart',
     component: EmptyCartComponent,
+  },
+  {
+    path: 'terms',
+    component:TermsComponent,
+
   },
   {
     path: '**',

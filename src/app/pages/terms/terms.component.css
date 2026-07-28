@@ -1,0 +1,367 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+/* پس‌زمینه صفحه؛ مشابه صفحه ورود */
+.terms-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #eef5f7;
+  color: #292f33;
+  overflow: hidden;
+}
+
+/* دایره تزئینی سمت راست */
+.terms-page::before {
+  content: '';
+  position: fixed;
+  top: 130px;
+  right: 55px;
+
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 42%);
+}
+
+/* دایره تزئینی پایین صفحه */
+.terms-page::after {
+  content: '';
+  position: fixed;
+  bottom: 50px;
+  left: 70px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 24%);
+}
+
+/* کارت اصلی؛ هم‌اندازه و هم‌شکل کارت ورود */
+.terms-card {
+  position: relative;
+  z-index: 1;
+
+  width: min(690px, 100%);
+  height: min(850px, calc(100vh - 100px));
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgb(255 255 255 / 94%);
+  border: 1px solid #d9e3e6;
+  border-top: 4px solid #72a9dc;
+  border-radius: 30px;
+
+  box-shadow: 0 18px 45px rgb(64 92 105 / 10%);
+  overflow: hidden;
+}
+
+/* سربرگ کارت */
+.terms-header {
+  position: relative;
+  flex-shrink: 0;
+
+  min-height: 155px;
+  padding: 88px 48px 22px;
+
+  text-align: right;
+}
+
+.terms-header h1 {
+  margin: 0;
+
+  color: #252c31;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+/* فلش؛ مشابه صفحه ورود */
+.back-button {
+  position: absolute;
+  top: 34px;
+  right: 34px;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+
+  color: #263139;
+  font-family: inherit;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+  appearance: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.back-button:hover {
+  background-color: #edf3f5;
+}
+
+.back-button:active {
+  transform: scale(0.94);
+}
+
+/* متن قوانین */
+.terms-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  padding: 0 48px 28px;
+
+  color: #444d52;
+  font-size: 15px;
+  line-height: 2.15;
+  text-align: justify;
+
+  scrollbar-width: thin;
+  scrollbar-color: #bfd0d6 transparent;
+}
+
+.terms-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.terms-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.terms-content::-webkit-scrollbar-thumb {
+  background-color: #bfd0d6;
+  border-radius: 20px;
+}
+
+.terms-content h2 {
+  margin: 0 0 24px;
+
+  color: #30373c;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+.terms-content h3 {
+  margin: 28px 0 8px;
+
+  color: #2e363b;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.terms-content p {
+  margin: 7px 0;
+}
+
+.terms-content ul {
+  margin: 10px 0 20px;
+  padding-right: 25px;
+}
+
+.terms-content li {
+  margin-bottom: 9px;
+  padding-right: 3px;
+}
+
+.terms-content li::marker {
+  color: #719fc7;
+}
+
+.terms-content strong {
+  color: #262d31;
+  font-weight: 800;
+}
+
+/* پایین کارت */
+.terms-footer {
+  flex-shrink: 0;
+
+  padding: 22px 38px 32px;
+
+  border-top: 1px solid #edf0f1;
+  background-color: rgb(255 255 255 / 97%);
+}
+
+/* دکمه ادامه؛ مشابه دکمه صفحه ورود */
+.accept-button {
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 20px;
+  background-color: #719fc7;;
+
+  color: #e1e7ea;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.accept-button:hover {
+  background-color: #b8ced3;
+  color: #3e555e;
+}
+
+.accept-button:active {
+  transform: scale(0.99);
+}
+/* قسمت پذیرش قوانین */
+.terms-acceptance {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid #dce5e8;
+  border-radius: 14px;
+  background-color: #f7fafb;
+
+  color: #3f4b51;
+  font-size: 14px;
+  line-height: 1.8;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+/* چک‌باکس */
+.terms-checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+
+  accent-color: #72a9dc;
+  cursor: pointer;
+}
+
+/* حالت پیش‌فرض و غیرفعال دکمه */
+.accept-button:disabled {
+  background-color: #c7d7da;
+  color: #829197;
+
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* حالت فعال دکمه بعد از تیک‌زدن */
+.accept-button.accept-button-active {
+  background-color: #72a9dc;
+  color: #ffffff;
+
+  cursor: pointer;
+  opacity: 1;
+}
+
+.accept-button.accept-button-active:hover {
+  background-color: #609bd3;
+}
+/* نمایش در موبایل */
+@media (max-width: 700px) {
+  .terms-page {
+    padding: 18px 12px;
+    align-items: flex-start;
+  }
+
+  .terms-page::before {
+    top: 70px;
+    right: -65px;
+
+    width: 160px;
+    height: 160px;
+  }
+
+  .terms-page::after {
+    bottom: 20px;
+    left: -90px;
+
+    width: 190px;
+    height: 190px;
+  }
+
+  .terms-card {
+    width: 100%;
+    height: calc(100vh - 36px);
+
+    border-radius: 25px;
+  }
+
+  .terms-header {
+    min-height: 130px;
+    padding: 76px 24px 18px;
+  }
+
+  .terms-header h1 {
+    font-size: 25px;
+  }
+
+  .back-button {
+    top: 25px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    font-size: 31px;
+  }
+
+  .terms-content {
+    padding: 0 24px 24px;
+
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .terms-content h2 {
+    font-size: 18px;
+  }
+
+  .terms-content h3 {
+    font-size: 17px;
+  }
+
+  .terms-footer {
+    padding: 16px 20px 22px;
+  }
+
+  .accept-button {
+    min-height: 56px;
+
+    border-radius: 18px;
+    font-size: 16px;
+  }
+}
