@@ -22,6 +22,7 @@ import { InputTextModule } from 'primeng/inputtext';
     RippleModule,
     AvatarModule,
     StyleClassModule,
+    
   ],
 
   exports: [CommonModule,

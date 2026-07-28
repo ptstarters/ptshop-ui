@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './search/sidebar/sidebar/sidebar.component';
-import { UserLogInComponent } from './user/user login panel/user-login.component';
 
 const routes: Routes = [
   {
@@ -25,11 +24,10 @@ const routes: Routes = [
     path: 'menuSections',
     component: SidebarComponent,
     pathMatch: 'prefix',
-
   },
   {
     path: 'login',
-    component: UserLogInComponent,
+    component: LoginComponent,
     pathMatch: 'full',
   },
   {
@@ -39,9 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
-
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
