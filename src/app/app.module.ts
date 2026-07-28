@@ -14,9 +14,10 @@ import { FooterModule } from './footer/footer.module';
 import { SearchModule } from './search/search.module';
 import { CategoriesModule } from './categories/categories.module';
 import { HttpClientModule } from '@angular/common/http';
+import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

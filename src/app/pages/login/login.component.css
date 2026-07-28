@@ -153,20 +153,16 @@
 /* متن قوانین */
 
 .terms-text {
-  margin: 18px 0 0;
+  margin: 16px 0;
+  color: #666666;
+  font-size: 13px;
   text-align: center;
-
-  color: var(--color-primary-dark);
-
-  font-size: 12px;
-  line-height: 2;
 }
 
 .terms-link {
-  color: #1f34a9;
-
-  font-weight: 600;
+  color: #4e9bd4;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .terms-link:hover {

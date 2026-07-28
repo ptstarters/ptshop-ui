@@ -1,0 +1,39 @@
+<p>empty-cart works!</p>
+<div class="empty-cart-page" dir="rtl">
+  <header class="top-header">
+    <button
+      type="button"
+      class="back-button"
+      aria-label="بازگشت"
+      (click)="goBack()"
+    >
+      ←
+    </button>
+
+    <button type="button" class="address-button" (click)="selectAddress()">
+      <span>انتخاب آدرس</span>
+      <span class="address-arrow">⌄</span>
+    </button>
+  </header>
+
+  <main class="empty-cart-content">
+    <div class="bag-illustration">
+      <div class="bag-handle"></div>
+
+      <div class="bag-body">
+        <div class="bag-face">
+          <span class="eye"></span>
+          <span class="eye"></span>
+        </div>
+      </div>
+    </div>
+
+    <h1>سبد خرید شما خالی است</h1>
+
+    <p>در حال حاضر سبد خرید فعالی ندارید.</p>
+
+    <button type="button" class="start-order-button" (click)="startOrder()">
+      شروع ثبت سفارش
+    </button>
+  </main>
+</div>
