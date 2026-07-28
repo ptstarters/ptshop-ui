@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./terms.component.css'],
 })
 export class TermsComponent {
+
   acceptedTerms: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goBack(): void {
     this.router.navigateByUrl('/login');

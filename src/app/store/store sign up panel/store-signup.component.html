@@ -1,20 +1,18 @@
-<h1>ثبت نام فروشندگان</h1>
-
-
-
-<div class="card flex justify-content-center">
-    <p-dropdown [options]="businessTypes" [(ngModel)]="selectedBusinessType" optionLabel="name"
-        placeholder="انتخاب نوع کسب و کار" />
-</div>
-
-
-<div class="card flex justify-content-center">
-    <p-cascadeSelect [(ngModel)]="selectedCity" [options]="countries" optionLabel="cname" optionGroupLabel="name"
-        [optionGroupChildren]="['states', 'cities']" [style]="{ minWidth: '14rem' }" placeholder="انتخاب شهر" />
-</div>
-
-
 <div class="card">
+    <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه اصلی" (click)="goBack()">
+        <i class="pi pi-arrow-right"></i>
+    </button>
+    <h1>ثبت نام فروشندگان</h1>
+    <div class="card flex justify-content-center">
+        <p-dropdown [options]="businessTypes" [(ngModel)]="selectedBusinessType" optionLabel="name"
+            placeholder="انتخاب نوع کسب و کار" />
+    </div>
+
+
+    <div class="card flex justify-content-center">
+        <p-cascadeSelect [(ngModel)]="selectedCity" [options]="countries" optionLabel="cname" optionGroupLabel="name"
+            [optionGroupChildren]="['states', 'cities']" [style]="{ minWidth: '14rem' }" placeholder="انتخاب شهر" />
+    </div>
     <div class="p-inputgroup">
         <span class="p-inputgroup-addon">
             <i class="pi pi-user"></i>
@@ -63,7 +61,10 @@
 
 
 
-    <div class="Submit-button">
-        <p-button label="ثبت‌نام" />
+    <div class="register-actions">
+        <button pButton type="button" class="continue-button" (click)="register()">
+            ثبت‌نام
+        </button>
     </div>
+
 </div>

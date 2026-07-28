@@ -1,3 +1,4 @@
+import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 
 @Component({
@@ -18,6 +19,14 @@ export class StoreSignUpComponent {
     option = "";
 
 
+    register(): void {
+        console.log('ثبت‌نام انجام شد');
+    }
 
+    constructor(private location: Location) { }
+
+    goBack(): void {
+        this.location.back();
+
+    }
 }
-

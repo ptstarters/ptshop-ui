@@ -21,7 +21,7 @@ export class StoreLoginComponent {
     private router: Router,
     private storeAuthService: StoreAuthService,
     private tokenService: TokenService
-  ) {}
+  ) { }
 
   loginStore(): void {
     if (
@@ -70,5 +70,22 @@ export class StoreLoginComponent {
 
   goToSignup(): void {
     this.router.navigateByUrl('/store/signup');
+  }
+
+
+  get isMobileValid(): boolean {
+    return /^09\d{9}$/.test(this.mobileNumber);
+  }
+
+  goBack(): void {
+    this.router.navigate(['/']);
+  }
+
+  continueLogin(): void {
+    if (!this.isMobileValid) {
+      return;
+    }
+
+    console.log('شماره موبایل:', this.mobileNumber);
   }
 }

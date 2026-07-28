@@ -1,11 +1,7 @@
 :host {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    direction: rtl;
+    display: block;
     padding: 20px;
-    box-sizing: border-box;
-    background-color: transparent;
 }
 
 .register-page {
@@ -25,14 +21,17 @@
     backdrop-filter: blur(4px);
 }
 
+
 .register-content {
     width: 100%;
-    margin-top: 8px;
+    margin-top: 76px;
     text-align: right;
 }
 
 .register-title {
-    margin: 0 0 6px 0;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 10px;
     color: var(--color-text);
     font-family: inherit;
     font-size: 25px;
@@ -41,35 +40,29 @@
 }
 
 .card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 12px;
+    width: 400px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 25px 20px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .p-inputgroup {
     display: flex;
-    align-items: stretch;
-    width: 100%;
-    border-radius: 13px;
+    align-items: center;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    transition: border-color 0.2s;
     overflow: hidden;
-    background-color: var(--color-surface-soft);
-    border: 1px solid var(--color-border);
-    transition:
-        border-color 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.p-inputgroup:hover {
-    border-color: #c9c9c9;
 }
 
 .p-inputgroup:focus-within {
-    background-color: #ffffff;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(142, 197, 255, 0.18);
+    border-color: #6366f1;
 }
 
 .p-inputgroup-addon {
@@ -77,43 +70,87 @@
     align-items: center;
     justify-content: center;
     padding: 0 14px;
-    background-color: transparent;
-    color: var(--color-text-soft);
+    background: #f9fafb;
+    color: #6b7280;
+    height: 44px;
+    min-width: 44px;
     border: none;
-    border-radius: 0;
-    font-size: 16px;
+    flex-shrink: 0;
 }
 
-.p-inputgroup-addon .pi {
-    font-size: 18px;
+.p-inputgroup-addon i {
+    font-size: 1rem;
+    color: #6b7280;
 }
 
-.p-inputtext {
+.p-inputgroup input {
     flex: 1;
-    height: 52px;
-    padding: 0 12px 0 16px;
-    box-sizing: border-box;
-    background-color: transparent;
     border: none;
     outline: none;
-    color: var(--color-text);
-    font-family: inherit;
-    font-size: 16px;
+    padding: 0 12px;
+    height: 44px;
+    font-size: 0.9rem;
+    font-family: 'YekanFont', 'Vazir', 'Tahoma', sans-serif;
+    background: transparent;
+    color: #1f2937;
     direction: rtl;
-    text-align: right;
+    min-width: 0;
 }
 
-.p-inputtext::placeholder {
-    color: #b0b0b0;
-    font-weight: 300;
+.p-inputgroup input::placeholder {
+    color: #9ca3af;
+    font-size: 0.85rem;
 }
 
-.Submit-button {
+.p-inputgroup:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .p-inputgroup-addon {
+        padding: 0 10px;
+        min-width: 38px;
+        height: 40px;
+    }
+
+    .p-inputgroup input {
+        height: 40px;
+        font-size: 0.85rem;
+    }
+}
+
+.terms-text {
+    margin: 18px 0 0;
+    text-align: center;
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.terms-link {
+    color: #1f34a9;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+.register-actions {
     width: 100%;
-    margin-top: 8px;
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid #eeeeee;
 }
 
-.Submit-button .p-button {
+
+.continue-button.p-button {
     width: 100%;
     height: 50px;
     display: flex;
@@ -134,13 +171,13 @@
         box-shadow 0.2s ease;
 }
 
-.Submit-button .p-button:enabled:hover {
+.continue-button.p-button:enabled:hover {
     background-color: var(--color-primary-dark);
     box-shadow: 0 5px 14px rgba(109, 168, 228, 0.2);
 }
 
-.Submit-button .p-button:disabled,
-.Submit-button .p-button.p-disabled {
+.continue-button.p-button:disabled,
+.continue-button.p-button.p-disabled {
     color: #8ea1b3;
     background-color: #dfeaf4;
     opacity: 1;
@@ -149,36 +186,8 @@
     box-shadow: none;
 }
 
-/* حالت موبایل */
-@media screen and (max-width: 520px) {
-    :host {
-        padding: 0;
-        background-color: #ffffff;
-    }
 
-    .register-page {
-        max-width: none;
-        min-height: 100vh;
-        padding: 20px 18px 18px;
-        border: none;
-        border-top: 4px solid var(--color-primary);
-        border-radius: 0;
-        box-shadow: none;
-    }
 
-    .register-title {
-        font-size: 23px;
-    }
-
-    .p-inputtext {
-        height: 50px;
-        font-size: 15px;
-    }
-
-    .Submit-button .p-button {
-        height: 48px;
-    }
-}
 
 @font-face {
     font-family: 'YekanFont';

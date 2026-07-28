@@ -1,27 +1,24 @@
-<h1>ثبت نام</h1>
 <div class="card">
-
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">
-            <i class="pi pi-user-edit"></i>
-        </span>
-        <input type="text" pInputText placeholder="نام " />
-    </div>
-
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">
-            <i class="pi pi-user-edit"></i>
-        </span>
-        <input type="text" pInputText placeholder="نام خانوادگی" />
-    </div>
-
+    <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه اصلی" (click)="goBack()">
+        <i class="pi pi-arrow-right"></i>
+    </button>
+    <h1>ثبت‌نام</h1>
 
     <div class="p-inputgroup">
         <span class="p-inputgroup-addon">
             <i class="pi pi-user"></i>
         </span>
-        <input type="text" pInputText placeholder="نام کاربری" />
+        <input type="text" pInputText placeholder="نام" />
     </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+        </span>
+        <input type="text" pInputText placeholder="نام خانوادگی" />
+    </div>
+
+
 
     <div class="p-inputgroup">
         <span class="p-inputgroup-addon">
@@ -44,20 +41,19 @@
         </span>
         <input type="password" pInputText placeholder="تکرار رمز عبور" />
     </div>
-
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">
-            <i class="pi pi-envelope"></i>
-        </span>
-        <input type="email" pInputText placeholder="ایمیل (اختیاری)" />
-        <!-- <span class="p-inputgroup-addon">
-                <i class="pi pi-info-circle" style="color: #6c757d;" pTooltip="اختیاری" tooltipPosition="top"></i>
-            </span> -->
+    <div>
+        <p class="terms-text">
+            با ثبت‌نام،
+            <a href="#" class="terms-link" (click)="$event.preventDefault()">
+                شرایط و قوانین
+            </a>
+            استفاده از پارس فود را می‌پذیرم.
+        </p>
     </div>
 
     <div class="register-actions">
         <button pButton type="button" class="continue-button" (click)="register()">
-            ثبت نام
+            ثبت‌نام
         </button>
     </div>
 </div>

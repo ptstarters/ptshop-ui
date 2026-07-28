@@ -11,15 +11,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
 import { FooterModule } from './footer/footer.module';
- import { CategoriesModule } from './categories/categories.module';
+import { CategoriesModule } from './categories/categories.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
 import { UserModule } from './user/user.module';
 import { StoreModule } from './store/store.module';
 import { SearchModule } from './search/search.module';
+import { TermsComponent } from './pages/terms/terms.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, EmptyCartComponent, TermsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

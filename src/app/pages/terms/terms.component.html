@@ -2,13 +2,7 @@
   <main class="terms-card">
     <!-- سربرگ صفحه -->
     <header class="terms-header">
-      <button
-        type="button"
-        class="back-button"
-        aria-label="بازگشت به صفحه ورود"
-        title="بازگشت"
-        (click)="goBack()"
-      >
+      <button type="button" class="back-button" aria-label="بازگشت به صفحه ورود" title="بازگشت" (click)="goBack()">
         →
       </button>
 
@@ -259,24 +253,15 @@
     <!-- دکمه پایین کارت -->
     <footer class="terms-footer">
       <label class="terms-acceptance">
-        <input
-          type="checkbox"
-          class="terms-checkbox"
-          [(ngModel)]="acceptedTerms"
-        />
+        <input type="checkbox" class="terms-checkbox" [(ngModel)]="acceptedTerms" />
 
         <span>
           شرایط و قوانین استفاده از پارس فود را مطالعه کرده‌ام و می‌پذیرم.
         </span>
       </label>
 
-      <button
-        type="button"
-        class="accept-button"
-        [disabled]="!acceptedTerms"
-        [class.accept-button-active]="acceptedTerms"
-        (click)="acceptTerms()"
-      >
+      <button type="button" class="accept-button" [disabled]="!acceptedTerms"
+        [class.accept-button-active]="acceptedTerms" (click)="acceptTerms()">
         ادامه
       </button>
     </footer>

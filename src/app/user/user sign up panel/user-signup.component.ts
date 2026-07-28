@@ -19,9 +19,7 @@ export class UserSignUpComponent {
     constructor(private location: Location) { }
 
     goBack(): void {
-        this.location.back(); // به صفحه قبلی (معمولاً login) برمی‌گردد
-        // یا اگر می‌خواهید حتماً به login بروید: 
-        // this.router.navigate(['/login']);
+        this.location.back();
     }
 }
 

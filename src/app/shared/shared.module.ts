@@ -17,7 +17,7 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     CommonModule,
     FormsModule,
     RouterModule,
-
+    FormsModule,
     ButtonModule,
     InputTextModule,
     SidebarModule,
@@ -42,4 +42,4 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     CascadeSelectModule,
   ],
 })
-export class SharedModule {}
+export class SharedModule { }
