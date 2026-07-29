@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FrameModule } from 'src/app/frame/frame.module';
 
-import { SearchModule } from '../../search/search.module';
 
 interface MarketProduct {
   title: string;
@@ -26,11 +26,7 @@ interface MarketStore {
 
 @Component({
   selector: 'app-supermarket',
-  standalone: true,
-  imports: [
-    CommonModule,
-    SearchModule,
-  ],
+
   templateUrl: './supermarket.component.html',
   styleUrls: ['./supermarket.component.css'],
 })
@@ -140,7 +136,7 @@ export class SupermarketComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goBack(): void {
     this.router.navigateByUrl('/');

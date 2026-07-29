@@ -13,7 +13,7 @@ export class TermsComponent {
   constructor(private router: Router) { }
 
   goBack(): void {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/register');
   }
 
   acceptTerms(): void {
