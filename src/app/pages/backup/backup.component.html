@@ -1,4 +1,7 @@
-<div>
+<div class="card flex justify-content-center" routerLink="/backup">
 
-    <h1 routerLink="/backup">پشتیبانی</h1>
+    <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه اصلی" (click)="goBack()">
+        <i class="pi pi-arrow-right"></i>
+    </button>
+    <p-panelMenu [model]="items" />
 </div>

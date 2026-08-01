@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
@@ -9,13 +10,19 @@ import { MenuItem } from 'primeng/api';
 
 })
 export class AccountMenuComponent implements OnInit {
+    constructor(private location: Location) { }
+
+    goBack(): void {
+        this.location.back();
+
+    }
     items: MenuItem[] = [];
 
     ngOnInit() {
         this.items = [
-            { label: 'تراکنش ها', icon: 'pi pi-credit-card', },
-            { label: 'تخفیف ها', icon: 'pi pi-percentage', },
-            { label: 'نظرات من', icon: 'pi pi-pencil' },
+            { label: 'تراکنش ها', icon: 'pi pi-credit-card', routerLink: "/peyment" },
+            { label: 'تخفیف ها', icon: 'pi pi-percentage', routerLink: "/discount" },
+            { label: 'نظرات من', icon: 'pi pi-pencil', routerLink: "/comment" },
             { label: 'پشتیبانی', icon: 'pi pi-wrench', routerLink: "/backup" },
             { label: 'خروج از حساب کاربری', icon: 'pi pi-sign-out', routerLink: "/home" },
 

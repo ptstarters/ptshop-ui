@@ -10,6 +10,9 @@ import { TermsComponent } from './pages/terms/terms.component';
 import { SupermarketComponent } from './pages/supermarket/supermarket.component';
 import { AccountMenuComponent } from './pages/account menu/account-menu.component';
 import { BackupComponent } from './pages/backup/backup.component';
+import { PeymentComponent } from './pages/peyment/peyment.component';
+import { CommentComponent } from './pages/comment/comment.component';
+import { DiscountComponent } from './pages/discount/discount.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,10 +25,13 @@ const routes: Routes = [
   { path: 'account-menu', component: AccountMenuComponent },
   { path: 'backup', component: BackupComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'peyment', component: PeymentComponent },
+  { path: 'comment', component: CommentComponent },
+  { path: 'discount', component: DiscountComponent },
 
 
   // مسیر پیش‌فرض (خانه)
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent },
 
   // مسیر ناموجود (همیشه آخرین باشد)
   { path: '**', redirectTo: '' },

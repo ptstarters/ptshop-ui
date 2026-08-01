@@ -17,10 +17,15 @@ export class UserSignUpComponent {
         console.log('ثبت‌نام انجام شد');
     }
 
-    constructor(private Router: Router) { }
+    constructor(
+        private Router: Router,
+        private location: Location
+    ) { }
+
 
     goBack(): void {
-        this.Router.navigateByUrl('/login');
+        this.location.back();
+
     }
 }
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { StoreAuthService } from '../../../service/store-auth.service';
 import { TokenService } from '../../../service/token.service';
 import { AuthResponse } from '../../../service/auth.models';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-store-login',
@@ -20,7 +21,8 @@ export class StoreLoginComponent {
   constructor(
     private router: Router,
     private storeAuthService: StoreAuthService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private location: Location
   ) { }
 
   loginStore(): void {
@@ -59,7 +61,7 @@ export class StoreLoginComponent {
       error: (error): void => {
         this.isLoading = false;
 
-        console.error('Store login error:', error);
+        console.error('ورود ناموفق:', error);
 
         this.errorMessage =
           error.error?.message ||
@@ -68,9 +70,7 @@ export class StoreLoginComponent {
     });
   }
 
-  goToSignup(): void {
-    this.router.navigateByUrl('/store/signup');
-  }
+
 
 
   get isMobileValid(): boolean {
@@ -78,7 +78,8 @@ export class StoreLoginComponent {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    this.location.back();
+
   }
 
   continueLogin(): void {

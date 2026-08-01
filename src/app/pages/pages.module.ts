@@ -20,10 +20,44 @@ import { AppRoutingModule } from '../app-routing.module';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { AccountMenuComponent } from './account menu/account-menu.component';
 import { RouterModule } from '@angular/router';
+import { BackupComponent } from './backup/backup.component';
 
 @NgModule({
-    declarations: [EmptyCartComponent, HomeComponent, LoginComponent, StoreLoginComponent, StoreSignUpComponent, SupermarketComponent, TermsComponent, UserSignUpComponent, AccountMenuComponent],
-    imports: [CommonModule, ButtonModule, CascadeSelectModule, DropdownModule, FormsModule, FrameModule, CategoriesModule, AppRoutingModule, PanelMenuModule, RouterModule],
-    exports: [EmptyCartComponent, HomeComponent, LoginComponent, StoreLoginComponent, StoreSignUpComponent, SupermarketComponent, TermsComponent, UserSignUpComponent],
+    declarations: [
+        EmptyCartComponent,
+        HomeComponent,
+        LoginComponent,
+        StoreLoginComponent,
+        StoreSignUpComponent,
+        SupermarketComponent,
+        TermsComponent,
+        UserSignUpComponent,
+        AccountMenuComponent,
+        BackupComponent
+    ],
+
+    imports: [
+        CommonModule,
+        ButtonModule,
+        CascadeSelectModule,
+        DropdownModule,
+        FormsModule,
+        FrameModule,
+        CategoriesModule,
+        AppRoutingModule,
+        PanelMenuModule,
+        RouterModule
+    ],
+
+    exports: [
+        EmptyCartComponent,
+        HomeComponent,
+        LoginComponent,
+        StoreLoginComponent,
+        StoreSignUpComponent,
+        SupermarketComponent,
+        TermsComponent,
+        UserSignUpComponent
+    ],
 })
 export class PagesModule { }

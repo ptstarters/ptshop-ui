@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
@@ -12,6 +13,7 @@ export class LoginComponent {
 
   constructor(private router: Router,
     private authService: AuthService,
+    private location: Location,
   ) { }
 
   get isMobileValid(): boolean {
@@ -24,8 +26,10 @@ export class LoginComponent {
 
   // }
 
+
   goBack(): void {
-    this.router.navigate(['/']);
+    this.location.back();
+
   }
 
   continueLogin(): void {

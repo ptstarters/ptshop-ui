@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 type FooterItemId = 'home' | 'discount' | 'orders' | 'account';
 
@@ -27,11 +28,13 @@ export class FooterComponent {
       id: 'discount',
       title: 'تخفیف روز',
       icon: 'pi pi-bolt',
+      routerLink: "/discount"
     },
     {
       id: 'orders',
       title: 'سفارش‌ها',
       icon: 'pi pi-list',
+      routerLink: "/empty-cart"
     },
     {
       id: 'account',
@@ -48,4 +51,6 @@ export class FooterComponent {
   trackByItemId(index: number, item: FooterItem): FooterItemId {
     return item.id;
   }
+
+
 }

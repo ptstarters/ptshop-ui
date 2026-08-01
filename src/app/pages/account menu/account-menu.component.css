@@ -117,20 +117,3 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
 }
-
-@media (max-width: 480px) {
-    ::ng-deep .p-panelmenu .p-panelmenu-header>a {
-        padding: 10px 12px;
-        font-size: 0.85rem;
-    }
-
-    ::ng-deep .p-panelmenu .p-menuitem-link {
-        padding: 8px 28px 8px 12px;
-        font-size: 0.8rem;
-    }
-
-    .card {
-        padding: 20px 15px;
-        margin: 15px auto;
-    }
-}
