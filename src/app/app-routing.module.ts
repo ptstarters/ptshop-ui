@@ -12,6 +12,8 @@ import { SupermarketComponent } from './pages/supermarket/supermarket.component'
 import { AccountMenuComponent } from './pages/account menu/account-menu.component';
 import { BackupComponent } from './pages/backup/backup.component';
 import { DiscountComponent } from './pages/discount/discount.component';
+import { PeymentComponent } from './pages/peyment/peyment.component';
+import { CommentComponent } from './pages/comment/comment.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,8 +27,10 @@ const routes: Routes = [
   { path: 'backup', component: BackupComponent },
   { path: 'discount', component: DiscountComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'peyment', component: PeymentComponent },
+  { path: 'comment', component: CommentComponent },
 
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent, },
 
   { path: '**', redirectTo: '' },
 ];
@@ -35,4 +39,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

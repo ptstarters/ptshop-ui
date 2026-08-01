@@ -35,6 +35,7 @@ export class FooterComponent {
       id: 'orders',
       title: 'سفارش‌ها',
       icon: 'pi pi-list',
+      routerLink: '/empty-cart'
     },
     {
       id: 'account',
@@ -44,7 +45,7 @@ export class FooterComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   selectItem(itemId: FooterItemId): void {
     this.activeItem = itemId;

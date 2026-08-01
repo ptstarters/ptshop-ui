@@ -1,12 +1,7 @@
 <div class="empty-cart-page" dir="rtl">
   <header class="top-header">
-    <button
-      type="button"
-      class="back-button"
-      aria-label="بازگشت"
-      (click)="goBack()"
-    >
-      ←
+    <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه اصلی" (click)="goBack()">
+      <i class="pi pi-arrow-right"></i>
     </button>
 
     <button type="button" class="address-button" (click)="selectAddress()">
