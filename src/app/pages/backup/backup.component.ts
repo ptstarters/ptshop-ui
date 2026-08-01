@@ -1,11 +1,15 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 @Component({
     selector: 'app-backup',
-    templateUrl: './backup.Component.html',
+    standalone: true,
+    imports:[PanelMenuModule],
+    templateUrl: './backup.component.html',
     styleUrls: ['./backup.component.css'],
+    
 
 })
 export class BackupComponent implements OnInit {

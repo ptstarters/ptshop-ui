@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,7 +22,8 @@ import { PagesModule } from './pages/pages.module';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    PagesModule
+    PagesModule,
+    
 
   ],
   providers: [],

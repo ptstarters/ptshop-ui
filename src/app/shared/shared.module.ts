@@ -6,6 +6,7 @@ import { PagesModule } from '../pages/pages.module';
 @NgModule({
   imports: [
     FrameModule,
+    
 
 
   ],

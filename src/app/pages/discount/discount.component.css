@@ -1,15 +1,440 @@
-h1 {
-    padding: 100px;
-    color: gray;
+:host {
+  display: block;
+  min-height: 100vh;
 }
 
-.card {
-    width: 400px;
-    max-width: 100%;
-    margin: 30px auto;
-    padding: 25px 20px 30px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
+.discount-page {
+  min-height: 100vh;
+  padding: 24px 20px 100px;
+
+  color: var(--color-text);
+  background-color: transparent;
+}
+
+.discount-container {
+  width: min(1100px, 100%);
+  min-height: calc(100vh - 130px);
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  background-color: rgb(255 255 255 / 88%);
+
+  box-shadow: 0 16px 45px var(--color-shadow);
+  backdrop-filter: blur(8px);
+}
+
+/* نوار بالای صفحه */
+.discount-toolbar {
+  min-height: 82px;
+  padding: 14px 24px;
+
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 16px;
+
+  border-bottom: 1px solid var(--color-border);
+  background-color: rgb(255 255 255 / 92%);
+}
+
+.toolbar-button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background-color: var(--color-surface-soft);
+
+  color: var(--color-text);
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.toolbar-button:hover {
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-extra-light);
+}
+
+.toolbar-button:active {
+  transform: scale(0.94);
+}
+
+.address-button {
+  min-height: 48px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background-color: var(--color-primary-extra-light);
+
+  color: var(--color-primary-dark);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.address-button:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* بنر بالای تخفیف */
+.discount-banner {
+  padding: 30px 34px 25px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgb(255 255 255 / 50%) 0 70px,
+      transparent 71px
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-primary-light),
+      var(--color-primary-extra-light)
+    );
+}
+
+.banner-content {
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.banner-fire {
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 30px;
+  background-color: rgb(255 255 255 / 65%);
+
+  font-size: 65px;
+
+  box-shadow: 0 10px 28px rgb(80 125 165 / 12%);
+}
+
+.banner-text h1 {
+  margin: 0 0 10px;
+
+  color: var(--color-primary-dark);
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.banner-text p {
+  margin: 0;
+
+  color: var(--color-text);
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.banner-text strong {
+  padding: 2px 8px;
+
+  border-radius: 8px;
+  background-color: var(--color-primary);
+
+  color: #ffffff;
+}
+
+/* فیلترهای تخفیف */
+.discount-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-light) transparent;
+}
+
+.filter-button {
+  min-width: max-content;
+  min-height: 56px;
+  padding: 9px 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 18px;
+  background-color: rgb(255 255 255 / 82%);
+
+  color: var(--color-text-soft);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 18px rgb(78 120 156 / 8%);
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filter-button:hover {
+  transform: translateY(-2px);
+
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+}
+
+.filter-button-active {
+  color: #ffffff;
+  border-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
+}
+
+.filter-button-active:hover {
+  color: #ffffff;
+}
+
+.filter-icon {
+  font-size: 23px;
+}
+
+/* حالت خالی صفحه */
+.empty-discount-state {
+  min-height: 500px;
+  padding: 70px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.empty-discount-state h2 {
+  margin: 26px 0 9px;
+
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.empty-discount-state p {
+  margin: 0;
+
+  color: var(--color-text-soft);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* تصویر کیسه خالی با CSS */
+.empty-bag {
+  position: relative;
+
+  width: 130px;
+  height: 145px;
+}
+
+.bag-handle {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+
+  width: 61px;
+  height: 42px;
+
+  transform: translateX(-50%);
+
+  border: 7px solid #c1d6e4;
+  border-bottom: none;
+  border-radius: 30px 30px 0 0;
+}
+
+.bag-body {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+
+  width: 114px;
+  height: 112px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  border: 3px solid #c1d6e4;
+  border-radius: 10px 10px 24px 24px;
+  background:
+    linear-gradient(
+      135deg,
+      #f8fcff,
+      #eaf5fc
+    );
+
+  box-shadow: 9px 8px 0 #dae9f2;
+}
+
+.bag-eye {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+  background-color: #829aab;
+}
+
+/* تبلت */
+@media screen and (max-width: 768px) {
+  .discount-page {
+    padding: 12px 12px 100px;
+  }
+
+  .discount-container {
+    border-radius: 23px;
+  }
+
+  .discount-toolbar {
+    min-height: 72px;
+    padding: 10px 14px;
+  }
+
+  .discount-banner {
+    padding: 24px 20px 20px;
+  }
+
+  .banner-fire {
+    width: 82px;
+    height: 82px;
+
+    border-radius: 24px;
+    font-size: 51px;
+  }
+
+  .banner-text h1 {
+    font-size: 30px;
+  }
+
+  .banner-text p {
+    font-size: 16px;
+  }
+
+  .empty-discount-state {
+    min-height: 430px;
+  }
+}
+
+/* موبایل */
+@media screen and (max-width: 480px) {
+  .discount-page {
+    padding: 0 0 75px;
+  }
+
+  .discount-container {
+    min-height: calc(100vh - 60px);
+
+    border: none;
+    border-radius: 0;
+  }
+
+  .discount-toolbar {
+    grid-template-columns: 44px 1fr 44px;
+    gap: 8px;
+  }
+
+  .toolbar-button {
+    width: 42px;
+    height: 42px;
+
+    font-size: 18px;
+  }
+
+  .address-button {
+    min-height: 42px;
+    padding: 7px 12px;
+
+    font-size: 13px;
+  }
+
+  .banner-content {
+    gap: 14px;
+  }
+
+  .banner-fire {
+    width: 67px;
+    height: 67px;
+
+    border-radius: 19px;
+    font-size: 41px;
+  }
+
+  .banner-text h1 {
+    margin-bottom: 4px;
+
+    font-size: 25px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+  }
+
+  .filter-button {
+    min-height: 50px;
+    padding: 8px 13px;
+
+    border-radius: 15px;
+    font-size: 12px;
+  }
+
+  .filter-icon {
+    font-size: 20px;
+  }
+
+  .empty-discount-state {
+    min-height: 390px;
+    padding: 55px 20px;
+  }
+
+  .empty-discount-state h2 {
+    font-size: 17px;
+  }
+
+  .empty-discount-state p {
+    font-size: 13px;
+  }
 }

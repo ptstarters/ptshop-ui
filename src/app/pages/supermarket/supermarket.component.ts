@@ -1,8 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FrameModule } from 'src/app/frame/frame.module';
-
+ 
 
 interface MarketProduct {
   title: string;
@@ -26,10 +24,9 @@ interface MarketStore {
 
 @Component({
   selector: 'app-supermarket',
-
   templateUrl: './supermarket.component.html',
   styleUrls: ['./supermarket.component.css'],
-})
+  })
 export class SupermarketComponent {
   cartCount: number = 0;
 
@@ -136,7 +133,7 @@ export class SupermarketComponent {
     },
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   goBack(): void {
     this.router.navigateByUrl('/');
