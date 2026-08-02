@@ -1,6 +1,26 @@
 <app-header></app-header>
 <main class="page-content" , routerLink="/home">
   <app-category-section></app-category-section>
+  <!-- دکمه ورود به تمرین REST API -->
+  <section class="api-practice-section" dir="rtl">
+    <button
+      type="button"
+      class="api-practice-button"
+      routerLink="/api-practice"
+    >
+      <span class="api-button-icon">
+        <i class="pi pi-cloud-download"></i>
+      </span>
+
+      <span class="api-button-content">
+        <strong>تمرین REST API</strong>
+
+        <small> دریافت محصولات با Service و HttpClient </small>
+      </span>
+
+      <i class="pi pi-angle-left api-button-arrow"></i>
+    </button>
+  </section>
 </main>
 
 <app-footer></app-footer>

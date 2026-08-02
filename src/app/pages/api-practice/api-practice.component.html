@@ -1,0 +1,98 @@
+<main class="api-page" dir="rtl">
+  <section class="api-container">
+    <header class="page-header">
+      <div>
+        <span class="small-title">تمرین REST API</span>
+
+        <h1>محصولات دریافت‌شده از API</h1>
+
+        <p>
+          این اطلاعات با درخواست GET و از طریق
+          ProductApiService دریافت شده‌اند.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        class="reload-button"
+        [disabled]="isLoading"
+        (click)="loadProducts()"
+      >
+        <i class="pi pi-refresh"></i>
+
+        دریافت دوباره
+      </button>
+    </header>
+
+    <!-- حالت در حال دریافت -->
+    <section
+      *ngIf="isLoading"
+      class="status-box"
+    >
+      <i class="pi pi-spin pi-spinner"></i>
+
+      <span>در حال دریافت محصولات...</span>
+    </section>
+
+    <!-- حالت خطا -->
+    <section
+      *ngIf="!isLoading && errorMessage"
+      class="status-box error-box"
+    >
+      <i class="pi pi-exclamation-circle"></i>
+
+      <p>{{ errorMessage }}</p>
+
+      <button
+        type="button"
+        class="retry-button"
+        (click)="loadProducts()"
+      >
+        تلاش دوباره
+      </button>
+    </section>
+
+    <!-- حالت موفق -->
+    <section
+      *ngIf="
+        !isLoading &&
+        !errorMessage &&
+        products.length > 0
+      "
+      class="products-grid"
+    >
+      <article
+        *ngFor="let product of products"
+        class="product-card"
+      >
+        <img
+          class="product-image"
+          [src]="product.thumbnail"
+          [alt]="product.title"
+        />
+
+        <div class="product-content">
+          <h2>{{ product.title }}</h2>
+
+          <p>{{ product.description }}</p>
+
+          <div class="product-price">
+            {{ product.price }} دلار
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- پاسخ موفق ولی آرایه خالی -->
+    <section
+      *ngIf="
+        !isLoading &&
+        !errorMessage &&
+        products.length === 0
+      "
+      class="status-box"
+    >
+      محصولی دریافت نشد.
+    </section>
+  </section>
+</main>

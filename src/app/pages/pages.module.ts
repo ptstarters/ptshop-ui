@@ -22,6 +22,7 @@ import { AccountMenuComponent } from './account menu/account-menu.component';
 import { DiscountComponent } from './discount/discount.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SupermarketComponent } from './supermarket/supermarket.component';
+import { ApiPracticeComponent } from './api-practice/api-practice.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SupermarketComponent } from './supermarket/supermarket.component';
     UserSignUpComponent,
     AccountMenuComponent,
     DiscountComponent,
-    SupermarketComponent
+    SupermarketComponent,
+    ApiPracticeComponent
   ],
   imports: [
     CommonModule,

@@ -14,6 +14,7 @@ import { BackupComponent } from './pages/backup/backup.component';
 import { DiscountComponent } from './pages/discount/discount.component';
 import { PeymentComponent } from './pages/peyment/peyment.component';
 import { CommentComponent } from './pages/comment/comment.component';
+import { ApiPracticeComponent } from './pages/api-practice/api-practice.component';
 import { UserListComponent } from './users list/users-list.component';
 
 const routes: Routes = [
@@ -30,9 +31,13 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'peyment', component: PeymentComponent },
   { path: 'comment', component: CommentComponent },
-  { path: 'users', component: UserListComponent },
+  { path: 'api-practice', component: ApiPracticeComponent },
+  { path: 'user', component: UserListComponent },
+  
+  
 
   { path: '', component: HomeComponent, },
+ 
 
   { path: '**', redirectTo: '' },
 ];
