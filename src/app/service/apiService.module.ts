@@ -12,30 +12,30 @@ export class ApiService {
 
     // دریافت لیست داده‌ها (GET)
     getItems(): Observable<any> {
-        return this.http.get(`${this.baseUrl}/items`);
+        return this.http.get(`${this.baseUrl}/users`);
     }
 
     // دریافت یک داده با شناسه (GET)
     getItem(id: number): Observable<any> {
-        return this.http.get(`${this.baseUrl}/items/${id}`);
+        return this.http.get(`${this.baseUrl}/users/${id}`);
     }
 
     // ایجاد داده جدید (POST)
     createItem(data: any): Observable<any> {
-        return this.http.post(`${this.baseUrl}/items`, data);
+        return this.http.post(`${this.baseUrl}/users`, data);
     }
 
     // به‌روزرسانی داده (PUT)
     updateItem(id: number, data: any): Observable<any> {
-        return this.http.put(`${this.baseUrl}/items/${id}`, data);
+        return this.http.put(`${this.baseUrl}/users/${id}`, data);
     }
 
     // حذف داده (DELETE)
     deleteItem(id: number): Observable<any> {
-        return this.http.delete(`${this.baseUrl}/items/${id}`);
+        return this.http.delete(`${this.baseUrl}/users/${id}`);
     }
     signUp(userData: any): Observable<any> {
-        // معمولاً endpoint ثبت‌نام چیزی شبیه /auth/register یا /users است
-        return this.http.post(`${this.baseUrl}/auth/register`, userData);
+        // این آدرس در json-server وجود دارد
+        return this.http.post(`${this.baseUrl}/users`, userData);
     }
 }

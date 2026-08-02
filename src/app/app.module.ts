@@ -10,12 +10,13 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
+import { UserListComponent } from './users list/users-list.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UserListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     ButtonModule,
     InputTextModule,
     SharedModule,
@@ -23,7 +24,9 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     HttpClientModule,
     PagesModule,
-    
+    FormsModule,
+    CommonModule
+
 
   ],
   providers: [],

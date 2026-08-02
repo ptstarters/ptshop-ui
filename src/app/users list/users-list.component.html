@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>مدیریت کاربران</h2>
+
+    <!-- نمایش وضعیت بارگذاری -->
+    <div *ngIf="loading" style="color: blue;">در حال بارگذاری...</div>
+
+    <!-- جدول نمایش کاربران -->
+    <table *ngIf="!loading && users.length > 0" border="1" cellpadding="8"
+        style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>شناسه</th>
+                <th>نام</th>
+                <th>نام خانوادگی</th>
+                <th>شماره موبایل</th>
+                <th>آدرس</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.address }}</td>
+                <td>
+                    <button (click)="deleteUser(user.id)">
+                        حذف
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- پیام خالی بودن لیست -->
+    <div *ngIf="!loading && users.length === 0" style="margin-top: 20px;">
+        <p>هیچ کاربری در سیستم ثبت نشده است.</p>
+    </div>
+</div>

@@ -14,6 +14,7 @@ interface UserSignUp {
     role?: string;
 }
 
+
 @Component({
     selector: 'app-user-signup',
     templateUrl: './user-signup.component.html',
@@ -42,10 +43,7 @@ export class UserSignUpComponent {
     // متد ثبت‌نام اصلی
     register(): void {
         // 1. اعتبارسنجی سمت کلاینت (تکمیل‌کننده اعتبارسنجی HTML)
-        if (this.password !== this.confirmPassword) {
-            alert('رمز عبور و تکرار آن مطابقت ندارند!');
-            return;
-        }
+
 
         // 2. ساخت شیء برای ارسال به سرور
         const userData: UserSignUp = {
@@ -58,6 +56,11 @@ export class UserSignUpComponent {
 
         // 3. فعال کردن حالت بارگذاری
         this.loading = true;
+
+        // console.log('مقدار firstName:', this.firstName);
+        // console.log('مقدار lastName:', this.lastName);
+        // console.log('مقدار phone:', this.phone);
+
 
         // 4. ارسال به REST API (با فرض اینکه متد signUp در ApiService وجود دارد)
         this.apiService.signUp(userData).subscribe({
