@@ -1,6 +1,6 @@
- import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
- 
+
 
 interface MarketProduct {
   title: string;
@@ -26,7 +26,7 @@ interface MarketStore {
   selector: 'app-supermarket',
   templateUrl: './supermarket.component.html',
   styleUrls: ['./supermarket.component.css'],
-  })
+})
 export class SupermarketComponent {
   cartCount: number = 0;
 
@@ -133,7 +133,7 @@ export class SupermarketComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goBack(): void {
     this.router.navigateByUrl('/');
@@ -142,6 +142,11 @@ export class SupermarketComponent {
   addToCart(): void {
     this.cartCount++;
   }
+
+  deleteFromCart(): void {
+    this.cartCount--;
+  }
+
 
   trackProduct(index: number, product: MarketProduct): string {
     return product.title;

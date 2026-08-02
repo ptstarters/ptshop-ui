@@ -138,11 +138,9 @@
   padding: 28px;
 
   border-radius: 28px;
-  background: linear-gradient(
-    135deg,
-    #74afe3,
-    #a6d1ed
-  );
+  background: linear-gradient(135deg,
+      #74afe3,
+      #a6d1ed);
 
   box-shadow: 0 14px 35px rgb(80 130 170 / 17%);
 }
@@ -257,7 +255,8 @@
   font-size: 10px;
 }
 
-.add-product-button {
+.add-product-button,
+.delete-product-button {
   width: 34px;
   height: 34px;
   flex-shrink: 0;
@@ -272,7 +271,8 @@
   cursor: pointer;
 }
 
-.add-product-button:hover {
+.add-product-button,
+.delete-product-button:hover {
   background-color: var(--market-primary);
   color: #ffffff;
 }

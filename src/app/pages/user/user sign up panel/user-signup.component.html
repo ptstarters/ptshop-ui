@@ -34,13 +34,21 @@
         <input type="password" pInputText placeholder="رمز عبور" />
     </div>
 
-
     <div class="p-inputgroup">
         <span class="p-inputgroup-addon">
             <i class="pi pi-check-circle"></i>
         </span>
         <input type="password" pInputText placeholder="تکرار رمز عبور" />
     </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-home"></i>
+        </span>
+        <input type="text" pInputText placeholder="آدرس" />
+    </div>
+
+
     <div>
         <p class="terms-text">
             با ثبت‌نام،
@@ -52,7 +60,7 @@
     </div>
 
     <div class="register-actions">
-        <button pButton type="button" class="continue-button" (click)="register()">
+        <button pButton type="button" class="continue-button" (click)="signUp()">
             ثبت‌نام
         </button>
     </div>
