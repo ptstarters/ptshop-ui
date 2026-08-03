@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { Food } from 'src/app/models/cart.model';
 import { ShoppingService } from 'src/app/services/shopping.service';
 
@@ -7,10 +9,15 @@ import { ShoppingService } from 'src/app/services/shopping.service';
   selector: 'app-supermarket',
   templateUrl: './supermarket.component.html',
   styleUrls: ['./supermarket.component.css'],
-
 })
-export class SupermarketComponent implements OnInit {
+export class SupermarketComponent implements OnInit, OnDestroy {
   cartCount: number = 0;
+
+  // متغیر برای مدیریت لغو اشتراک‌ها
+  private destroy$ = new Subject<void>();
+
+  // متغیر برای نگهداری شناسه تایمر
+  private timer: any;
 
   products: Food[] = [
     { id: 1, title: 'شکلات', price: '۳۰٬۰۰۰ تومان', oldPrice: '۳۵٬۰۰۰ تومان', discount: '۱۴٪', icon: '🍫' },
@@ -45,22 +52,41 @@ export class SupermarketComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // ✅ گوش دادن به تغییرات سبد خرید و به‌روزرسانی تعداد
-    this.shoppingService.cart$.subscribe(() => {
-      this.cartCount = this.shoppingService.getTotalItems();
-    });
+    // ✅ اشتراک با takeUntil برای جلوگیری از نشت حافظه
+    this.shoppingService.cart$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.cartCount = this.shoppingService.getTotalItems();
+      });
+
+    // ✅ شروع یک تایمر (مثلاً هر ۵ ثانیه یکبار پیام در کنسول چاپ کند)
+    this.timer = setInterval(() => {
+      console.log('  تایمر فعال است - زمان:', new Date().toLocaleTimeString());
+      // شما میتوانید هر کار دیگری مثل به‌روزرسانی خودکار قیمت‌ها یا بررسی موجودی انجام دهید
+    }, 5000);
+  }
+
+  // ✅ هوک ngOnDestroy برای پاکسازی منابع
+  ngOnDestroy() {
+    // ۱. لغو اشتراک از همه Observableها
+    this.destroy$.next();
+    this.destroy$.complete();
+
+    // ۲. پاک کردن تایمر
+    if (this.timer) {
+      clearInterval(this.timer);
+      console.log('  تایمر پاک شد');
+    }
   }
 
   goBack(): void {
     this.router.navigateByUrl('/home');
   }
 
-  // ✅ متد افزودن به سبد خرید
   addToCart(product: Food): void {
     this.shoppingService.addToCart(product);
   }
 
-  // ✅ متد کاهش تعداد از سبد خرید
   deleteFromCart(product: Food): void {
     this.shoppingService.removeFromCart(product.id);
   }

@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ShoppingService } from 'src/app/services/shopping.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
+
 export class HeaderComponent {
-  cartCount: any;
+  cartCount: number = 0;
   onLogin() {
     throw new Error('Method not implemented.');
   }
@@ -21,15 +23,23 @@ export class HeaderComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private shoppingService: ShoppingService
   ) { }
+
+  ngOnInit() {
+    // ✅ گوش دادن به تغییرات سبد خرید و به‌روزرسانی تعداد
+    this.shoppingService.cart$.subscribe(() => {
+      this.cartCount = this.shoppingService.getTotalItems();
+    });
+  }
 
   onSelectAddress(): void {
     console.log('دکمه انتخاب آدرس کلیک شد');
   }
 
   onOpenCart(): void {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/cart']);
   }
 
   onSearch(): void {
