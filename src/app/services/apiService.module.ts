@@ -6,17 +6,20 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class ApiService {
+    updateUserWithPut(userId: number, fullUserData: { firstName: any; lastName: any; phone: any; address: any; }) {
+        throw new Error('Method not implemented.');
+    }
     private baseUrl = 'http://localhost:3000';
 
     constructor(private http: HttpClient) { }
 
     // دریافت لیست داده‌ها (GET)
-    getItems(): Observable<any> {
+    getUsers(): Observable<any> {
         return this.http.get(`${this.baseUrl}/users`);
     }
 
     // دریافت یک داده با شناسه (GET)
-    getItem(id: number): Observable<any> {
+    getUser(id: number): Observable<any> {
         return this.http.get(`${this.baseUrl}/users/${id}`);
     }
 
@@ -26,12 +29,16 @@ export class ApiService {
     }
 
     // به‌روزرسانی داده (PUT)
-    updateItem(id: number, data: any): Observable<any> {
+    updateUser(id: number, data: any): Observable<any> {
         return this.http.put(`${this.baseUrl}/users/${id}`, data);
     }
 
+    patchUser(id: number, data: any): Observable<any> {
+        return this.http.patch(`${this.baseUrl}/users/${id}`, data);
+    }
+
     // حذف داده (DELETE)
-    deleteItem(id: number): Observable<any> {
+    deleteUser(id: number): Observable<any> {
         return this.http.delete(`${this.baseUrl}/users/${id}`);
     }
     signUp(userData: any): Observable<any> {

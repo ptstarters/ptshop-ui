@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Location } from '@angular/common';
 import { Router } from "@angular/router";
-import { ApiService } from "src/app/service/apiService.module";
+import { ApiService } from "src/app/services/apiService.module";
 
 // 1. تعریف اینترفیس برای داده‌ای که به سرور می‌فرستیم
 interface UserSignUp {
@@ -10,7 +10,6 @@ interface UserSignUp {
     phone: string;   // بهتر است string باشد چون ممکن است با 0 شروع شود
     password: string;
     address: string;
-    // معمولاً role یا نوع کاربر را هم اضافه می‌کنند
     role?: string;
 }
 

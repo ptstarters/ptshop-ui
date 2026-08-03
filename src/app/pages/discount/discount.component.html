@@ -2,12 +2,7 @@
   <main class="discount-container">
     <!-- نوار بالای صفحه -->
     <header class="discount-toolbar">
-      <button
-        type="button"
-        class="toolbar-button back-button"
-        aria-label="بازگشت به صفحه قبلی"
-        (click)="goBack()"
-      >
+      <button type="button" class="toolbar-button back-button" aria-label="بازگشت به صفحه قبلی" (click)="goBack()">
         <i class="pi pi-arrow-right"></i>
       </button>
 
@@ -19,12 +14,7 @@
         <i class="pi pi-angle-down"></i>
       </button>
 
-      <button
-        type="button"
-        class="toolbar-button cart-button"
-        aria-label="مشاهده سبد خرید"
-        (click)="openCart()"
-      >
+      <button type="button" class="toolbar-button cart-button" aria-label="مشاهده سبد خرید" (click)="openCart()">
         <i class="pi pi-shopping-cart"></i>
       </button>
     </header>
@@ -47,14 +37,9 @@
 
       <!-- فیلترها -->
       <div class="discount-filters">
-        <button
-          *ngFor="let filter of discountFilters; trackBy: trackByFilterId"
-          type="button"
-          class="filter-button"
-          [class.filter-button-active]="activeFilter === filter.id"
-          [attr.aria-pressed]="activeFilter === filter.id"
-          (click)="selectFilter(filter.id)"
-        >
+        <button *ngFor="let filter of discountFilters; trackBy: trackByFilterId" type="button" class="filter-button"
+          [class.filter-button-active]="activeFilter === filter.id" [attr.aria-pressed]="activeFilter === filter.id"
+          (click)="selectFilter(filter.id)">
           <span class="filter-icon">
             {{ filter.icon }}
           </span>

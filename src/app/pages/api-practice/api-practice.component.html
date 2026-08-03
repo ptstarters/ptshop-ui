@@ -7,17 +7,11 @@
         <h1>محصولات دریافت‌شده از API</h1>
 
         <p>
-          این اطلاعات با درخواست GET و از طریق
-          ProductApiService دریافت شده‌اند.
+          محصولات فقط برای تماشا هستند. خریدنی نیستند. باتشکر از توجه شما.
         </p>
       </div>
 
-      <button
-        type="button"
-        class="reload-button"
-        [disabled]="isLoading"
-        (click)="loadProducts()"
-      >
+      <button type="button" class="reload-button" [disabled]="isLoading" (click)="loadProducts()">
         <i class="pi pi-refresh"></i>
 
         دریافت دوباره
@@ -25,51 +19,31 @@
     </header>
 
     <!-- حالت در حال دریافت -->
-    <section
-      *ngIf="isLoading"
-      class="status-box"
-    >
+    <section *ngIf="isLoading" class="status-box">
       <i class="pi pi-spin pi-spinner"></i>
 
       <span>در حال دریافت محصولات...</span>
     </section>
 
     <!-- حالت خطا -->
-    <section
-      *ngIf="!isLoading && errorMessage"
-      class="status-box error-box"
-    >
+    <section *ngIf="!isLoading && errorMessage" class="status-box error-box">
       <i class="pi pi-exclamation-circle"></i>
 
       <p>{{ errorMessage }}</p>
 
-      <button
-        type="button"
-        class="retry-button"
-        (click)="loadProducts()"
-      >
+      <button type="button" class="retry-button" (click)="loadProducts()">
         تلاش دوباره
       </button>
     </section>
 
     <!-- حالت موفق -->
-    <section
-      *ngIf="
+    <section *ngIf="
         !isLoading &&
         !errorMessage &&
         products.length > 0
-      "
-      class="products-grid"
-    >
-      <article
-        *ngFor="let product of products"
-        class="product-card"
-      >
-        <img
-          class="product-image"
-          [src]="product.thumbnail"
-          [alt]="product.title"
-        />
+      " class="products-grid">
+      <article *ngFor="let product of products" class="product-card">
+        <img class="product-image" [src]="product.thumbnail" [alt]="product.title" />
 
         <div class="product-content">
           <h2>{{ product.title }}</h2>
@@ -84,14 +58,11 @@
     </section>
 
     <!-- پاسخ موفق ولی آرایه خالی -->
-    <section
-      *ngIf="
+    <section *ngIf="
         !isLoading &&
         !errorMessage &&
         products.length === 0
-      "
-      class="status-box"
-    >
+      " class="status-box">
       محصولی دریافت نشد.
     </section>
   </section>

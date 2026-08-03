@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { StoreAuthService } from '../../../service/store-auth.service';
-import { TokenService } from '../../../service/token.service';
-import { AuthResponse } from '../../../service/auth.models';
+import { StoreAuthService } from '../../../services/store-auth.service';
+import { TokenService } from '../../../services/token.service';
+import { AuthResponse } from '../../../services/auth.models';
 import { Location } from '@angular/common';
 
 @Component({

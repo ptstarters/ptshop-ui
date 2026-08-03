@@ -1,15 +1,15 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/apiService.module';
-import { AuthService } from 'src/app/service/auth.service';
+import { ApiService } from 'src/app/services/apiService.module';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css'],
 })
-export class LoginComponent {
+export class UserLoginComponent {
   mobileNumber: string = '';
   password: string = '';
 

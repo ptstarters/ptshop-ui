@@ -5,11 +5,9 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 
 @Component({
     selector: 'app-backup',
-    standalone: true,
-    imports:[PanelMenuModule],
     templateUrl: './backup.component.html',
     styleUrls: ['./backup.component.css'],
-    
+
 
 })
 export class BackupComponent implements OnInit {

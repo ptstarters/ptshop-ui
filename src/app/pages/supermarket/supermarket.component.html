@@ -1,10 +1,9 @@
-<app-header></app-header>
-
 <div class="supermarket-page" dir="rtl">
   <main class="supermarket-container">
     <section class="market-toolbar">
-      <button type="button" class="back-button" aria-label="بازگشت" (click)="goBack()">
-        →
+      <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه اصلی"
+        (click)="goBack()">
+        <i class="pi pi-arrow-right"></i>
       </button>
 
       <div class="market-title">
@@ -16,11 +15,11 @@
         </div>
       </div>
 
-      <div class="cart-summary">
-        <span>🛍️</span>
+      <div class="cart-summary" routerLink="/cart">
         <span>سبد خرید</span>
         <strong>{{ cartCount }}</strong>
       </div>
+
     </section>
 
     <section class="offer-section">
@@ -56,10 +55,10 @@
               </del>
             </div>
 
-            <button type="button" class="add-product-button" (click)="addToCart()">
+            <button type="button" class="add-product-button" (click)="addToCart(product)">
               +
             </button>
-            <button type="button" class="delete-product-button" (click)="deleteFromCart()">
+            <button type="button" class="delete-product-button" (click)="deleteFromCart(product)">
               -
             </button>
 

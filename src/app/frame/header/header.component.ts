@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  cartCount: any;
   onLogin() {
     throw new Error('Method not implemented.');
   }

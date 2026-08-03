@@ -10,10 +10,10 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
-import { UserListComponent } from './users list/users-list.component';
+import { UserListComponent } from './pages/user/users list/users-list.component';
 import { CommonModule } from '@angular/common';
 @NgModule({
-  declarations: [AppComponent, UserListComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

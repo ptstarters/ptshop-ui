@@ -60,14 +60,14 @@ export class DiscountComponent {
   constructor(
     private location: Location,
     private router: Router,
-  ) {}
+  ) { }
 
   goBack(): void {
     this.location.back();
   }
 
   openCart(): void {
-    this.router.navigateByUrl('/empty-cart');
+    this.router.navigateByUrl('/cart');
   }
 
   selectAddress(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/service/apiService.module';
+import { ApiService } from 'src/app/services/apiService.module';
 
 @Component({
     selector: 'app-user-list',
@@ -19,7 +19,7 @@ export class UserListComponent implements OnInit {
     // دریافت لیست کاربران (با همان getItems که الان روی /users است)
     loadUsers(): void {
         this.loading = true;
-        this.apiService.getItems().subscribe({
+        this.apiService.getUsers().subscribe({
             next: (data) => {
                 this.users = data;
                 this.loading = false;
@@ -39,7 +39,7 @@ export class UserListComponent implements OnInit {
         }
 
         this.loading = true;
-        this.apiService.deleteItem(id).subscribe({
+        this.apiService.deleteUser(id).subscribe({
             next: () => {
                 console.log(`✅ کاربر با شناسه ${id} حذف شد.`);
                 // 🔥 به‌روزرسانی لیست محلی (حذف از آرایه)
@@ -53,4 +53,6 @@ export class UserListComponent implements OnInit {
             }
         });
     }
+
+
 }
