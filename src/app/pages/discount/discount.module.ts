@@ -8,11 +8,13 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { DiscountComponent } from './component/discount.component';
+import { FrameModule } from "src/app/frame/frame.module";
 
 @NgModule({
     declarations: [
 
-        DiscountComponent],
+        DiscountComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -22,7 +24,7 @@ import { DiscountComponent } from './component/discount.component';
         CascadeSelectModule,
         DropdownModule,
         PanelMenuModule,
-
+        FrameModule
     ],
     exports: [
 

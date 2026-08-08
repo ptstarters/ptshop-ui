@@ -8,11 +8,14 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HomeComponent } from './component/home.component';
+import { FrameModule } from "src/app/frame/frame.module";
+import { CategoriesModule } from "src/app/categories/categories.module";
 
 @NgModule({
     declarations: [
 
-        HomeComponent],
+        HomeComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -22,7 +25,8 @@ import { HomeComponent } from './component/home.component';
         CascadeSelectModule,
         DropdownModule,
         PanelMenuModule,
-
+        FrameModule,
+        CategoriesModule
     ],
     exports: [
 

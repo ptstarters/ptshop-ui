@@ -15,7 +15,7 @@ import { PeymentComponent } from './pages/peyment/component/peyment.component';
 import { CommentComponent } from './pages/comment/component/comment.component';
 import { ApiPracticeComponent } from './pages/api-practice/component/api-practice.component';
 import { UserListComponent } from './pages/user/users list/users-list.component';
-import { RegistrationComponent } from './registration(تمرین)/registration.component';
+import { RegistrationComponent } from './registration(تمرین)/component/registration.component';
 
 const routes: Routes = [
 

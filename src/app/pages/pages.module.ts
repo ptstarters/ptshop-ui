@@ -8,43 +8,29 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { PanelMenuModule } from 'primeng/panelmenu';
 
-import { FrameModule } from '../frame/frame.module';
 import { CategoriesModule } from '../categories/categories.module';
 
-import { CartComponent } from './cart/component/cart.component';
-import { HomeComponent } from './home/component/home.component';
-import { UserLoginComponent } from './user/user login panel/user-login.component';
-import { StoreLoginComponent } from './store/store login panel/store-login.component';
-import { StoreSignUpComponent } from './store/store sign up panel/store-signup.component';
-import { TermsComponent } from './terms/component/terms.component';
-import { UserSignUpComponent } from './user/user sign up panel/user-signup.component';
-import { DiscountComponent } from './discount/component/discount.component';
+
+
 import { AppRoutingModule } from '../app-routing.module';
-import { SupermarketComponent } from './supermarket/component/supermarket.component';
-import { UserListComponent } from './user/users list/users-list.component';
-import { ApiPracticeComponent } from './api-practice/component/api-practice.component';
-import { PeymentComponent } from './peyment/component/peyment.component';
-import { BackupComponent } from './backup/component/backup.component';
-import { CommentComponent } from './comment/component/comment.component';
+
+import { AccountMenuModule } from './account menu/account-menu.module';
+import { BackUpModule } from './backup/backup.module';
+import { CartModule } from './cart/cart.module';
+import { CommentModule } from './comment/comment.module';
+import { DiscountModule } from './discount/discount.module';
+import { HomeModule } from './home/home.module';
+import { PeymentModule } from './peyment/peyment.module';
+import { StoreLoginModule } from './store/store-login.module';
+import { StoreSignUpModule } from './store/store-signup.module';
+import { SupermarketModule } from './supermarket/supermarket.module';
+import { TermsModule } from './terms/terms.module';
+import { UserListModule } from './user/user-list.module';
+import { UserLoginModule } from './user/user-login.module';
+import { UserSignUpModule } from './user/user-signup.module';
 
 @NgModule({
-  declarations: [
-    CartComponent,
-    HomeComponent,
-    UserLoginComponent,
-    UserSignUpComponent,
-    UserListComponent,
-    StoreLoginComponent,
-    StoreSignUpComponent,
-    TermsComponent,
-    DiscountComponent,
-    SupermarketComponent,
-    ApiPracticeComponent,
-    PeymentComponent,
-    BackupComponent,
-    CommentComponent
 
-  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -54,24 +40,48 @@ import { CommentComponent } from './comment/component/comment.component';
     CascadeSelectModule,
     DropdownModule,
     PanelMenuModule,
-    FrameModule,
     CategoriesModule,
+    AccountMenuModule,
+    BackUpModule,
+    CartModule,
+    CommentModule,
+    DiscountModule,
+    HomeModule,
+    PeymentModule,
+    StoreLoginModule,
+    StoreSignUpModule,
+    SupermarketModule,
+    TermsModule,
+    UserListModule,
+    UserLoginModule,
+    UserSignUpModule
   ],
   exports: [
-    CartComponent,
-    HomeComponent,
-    UserLoginComponent,
-    UserSignUpComponent,
-    UserListComponent,
-    StoreLoginComponent,
-    StoreSignUpComponent,
-    TermsComponent,
-    AccountMenuComponent,
-    DiscountComponent,
+
+    CommonModule,
+    FormsModule,
+    RouterModule,
     AppRoutingModule,
-    PeymentComponent,
-    BackupComponent,
-    CommentComponent,
+    ButtonModule,
+    CascadeSelectModule,
+    DropdownModule,
+    PanelMenuModule,
+    CategoriesModule,
+    AccountMenuModule,
+    BackUpModule,
+    CartModule,
+    CommentModule,
+    DiscountModule,
+    HomeModule,
+    PeymentModule,
+    StoreLoginModule,
+    StoreSignUpModule,
+    SupermarketModule,
+    TermsModule,
+    UserListModule,
+    UserLoginModule,
+    UserSignUpModule
+
   ],
 })
 export class PagesModule { }

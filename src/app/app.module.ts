@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
-import { UserListComponent } from './pages/user/users list/users-list.component';
 import { CommonModule } from '@angular/common';
 import { RegistrationModule } from './registration(تمرین)/registration.module';
 @NgModule({
