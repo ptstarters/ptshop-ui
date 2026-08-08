@@ -1,0 +1,50 @@
+<div class="cart-page" dir="rtl">
+  <header class="cart-header">
+    <button pButton type="button" class="back-button p-button-text" (click)="goBack()">
+      <i class="pi pi-arrow-right"></i>
+    </button>
+    <h1>سبد خرید</h1>
+    <span class="item-count">{{ cartItems.length }} محصول</span>
+  </header>
+
+  <main class="cart-content">
+    <!-- ✅ نمایش پیام خالی بودن سبد -->
+    <div *ngIf="cartItems.length === 0" class="empty-cart">
+      <div class="empty-icon">🛒</div>
+      <h2>سبد خرید شما خالی است</h2>
+      <p>برای مشاهده محصولات به سوپرمارکت بروید.</p>
+      <button class="go-shop-btn" (click)="goBack()">رفتن به سوپرمارکت</button>
+    </div>
+
+    <!-- ✅ نمایش لیست محصولات -->
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <div class="item-info">
+        <span class="item-icon">{{ item.food.icon }}</span>
+        <div class="item-details">
+          <h3>{{ item.food.title }}</h3>
+          <p class="item-price">{{ item.food.price }}</p>
+        </div>
+      </div>
+
+      <div class="item-actions">
+        <button (click)="decreaseQuantity(item.food.id)" class="qty-btn">−</button>
+        <span class="qty-number">{{ item.quantity }}</span>
+        <button (click)="increaseQuantity(item.food.id)" class="qty-btn">+</button>
+        <button (click)="removeItem(item.food.id)" class="remove-btn">🗑️</button>
+      </div>
+    </div>
+
+    <!-- ✅ جمع کل و دکمه‌های عملیاتی -->
+    <div *ngIf="cartItems.length > 0" class="cart-footer">
+      <div class="total-section">
+        <span>جمع کل:</span>
+        <strong>{{ totalPrice | number }} تومان</strong>
+      </div>
+
+      <div class="action-buttons">
+        <button (click)="clearCart()" class="clear-btn">خالی کردن سبد</button>
+        <button (click)="checkout()" class="checkout-btn">ثبت سفارش</button>
+      </div>
+    </div>
+  </main>
+</div>

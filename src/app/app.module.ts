@@ -7,31 +7,31 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
-import { FooterModule } from './footer/footer.module';
-import { SearchModule } from './search/search.module';
-import { CategoriesModule } from './categories/categories.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PagesModule } from './pages/pages.module';
+import { UserListComponent } from './pages/user/users list/users-list.component';
+import { CommonModule } from '@angular/common';
+import { RegistrationModule } from './registration(تمرین)/registration.module';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CategoriesModule,
-    FormsModule,
     ButtonModule,
     InputTextModule,
-    RouterModule,
-    FooterModule,
-    SearchModule,
     SharedModule,
+    RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PagesModule,
+    FormsModule,
+    CommonModule,
+    RegistrationModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

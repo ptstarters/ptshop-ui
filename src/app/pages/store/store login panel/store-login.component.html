@@ -1,0 +1,36 @@
+<section class="store-login-page" dir="rtl">
+
+    <div class="card">
+        <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه اصلی"
+            (click)="goBack()">
+            <i class="pi pi-arrow-right"></i>
+        </button>
+        <h1>ورود به فروشگاه</h1>
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-mobile"></i>
+            </span>
+            <input type="text" pInputText placeholder=" شماره تلفن همراه مالک" />
+        </div>
+
+
+
+
+        <div>
+            <p class="terms-text">
+                فروشگاه خود را ثبت نکرده اید؟
+                <a routerLink="/resister-store" class="terms-link"> ثبت فروشگاه </a>
+            </p>
+        </div>
+
+
+        <div class="Submit-button">
+            <button pButton type="button" class="continue-button" (click)="continueLogin()">
+                ثبت‌نام
+            </button>
+        </div>
+    </div>
+
+
+
+</section>

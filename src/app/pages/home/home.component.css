@@ -7,3 +7,136 @@
     width: 100%;
     padding-bottom: 76px;
 }
+.api-practice-section {
+  width: min(900px, calc(100% - 32px));
+  margin: 35px auto 100px;
+}
+
+.api-practice-button {
+  width: 100%;
+  min-height: 100px;
+  padding: 18px 22px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(255 255 255 / 95%),
+      var(--color-primary-extra-light)
+    );
+
+  color: var(--color-text);
+  text-align: right;
+
+  box-shadow: 0 12px 35px var(--color-shadow);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.api-practice-button:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--color-primary);
+
+  box-shadow: 0 18px 42px
+    rgba(109, 168, 228, 0.25);
+}
+
+.api-practice-button:active {
+  transform: translateY(-1px);
+}
+
+.api-button-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 19px;
+  background-color: var(--color-primary-light);
+
+  color: var(--color-primary-dark);
+  font-size: 28px;
+}
+
+.api-button-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.api-button-content strong {
+  color: var(--color-text);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.api-button-content small {
+  color: var(--color-text-soft);
+  font-size: 13px;
+}
+
+.api-button-arrow {
+  color: var(--color-primary-dark);
+  font-size: 22px;
+
+  transition: transform 0.2s ease;
+}
+
+.api-practice-button:hover .api-button-arrow {
+  transform: translateX(-5px);
+}
+
+.api-practice-button:focus-visible {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  .api-practice-section {
+    width: calc(100% - 20px);
+    margin-top: 25px;
+  }
+
+  .api-practice-button {
+    min-height: 88px;
+    padding: 14px;
+
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+
+    border-radius: 20px;
+  }
+
+  .api-button-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+    font-size: 23px;
+  }
+
+  .api-button-content strong {
+    font-size: 16px;
+  }
+
+  .api-button-content small {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}

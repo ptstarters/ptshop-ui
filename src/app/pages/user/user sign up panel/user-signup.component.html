@@ -1,0 +1,78 @@
+<div class="card">
+    <button pButton type="button" class="back-button p-button-text" aria-label="بازگشت به صفحه ورود" (click)="goBack()">
+        <i class="pi pi-arrow-right"></i>
+    </button>
+    <h1>ثبت‌نام</h1>
+
+    <!-- اضافه کردن فرم برای مدیریت بهتر -->
+    <form #signupForm="ngForm" (ngSubmit)="register()">
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+            </span>
+            <input type="text" pInputText placeholder="نام" [(ngModel)]="firstName" name="firstName" required />
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+            </span>
+            <input type="text" pInputText placeholder="نام خانوادگی" [(ngModel)]="lastName" name="lastName" required />
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-mobile"></i>
+            </span>
+            <input type="text" pInputText placeholder="شماره تلفن همراه" [(ngModel)]="phone" name="phone" required
+                pattern="09[0-9]{9}" />
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-lock"></i>
+            </span>
+            <input type="password" pInputText placeholder="رمز عبور" [(ngModel)]="password" name="password" required
+                minlength="6" />
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-check-circle"></i>
+            </span>
+            <input type="password" pInputText placeholder="تکرار رمز عبور" [(ngModel)]="confirmPassword"
+                name="confirmPassword" required />
+        </div>
+
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-home"></i>
+            </span>
+            <input type="text" pInputText placeholder="آدرس" [(ngModel)]="address" name="address" required />
+        </div>
+
+        <!-- نمایش پیام خطا در صورت عدم تطابق رمزها -->
+        <div *ngIf="password !== confirmPassword && confirmPassword.length > 0">
+            رمز عبور و تکرار آن مطابقت ندارند!
+        </div>
+
+        <div>
+            <p class="terms-text">
+                با ثبت‌نام،
+                <a routerLink="/terms" class="terms-link">
+                    شرایط و قوانین استفاده از پارس فود
+                </a>
+                را می‌پذیرم.
+            </p>
+        </div>
+
+        <div class="register-actions">
+            <button pButton type="submit" class="continue-button"
+                [disabled]="signupForm.invalid || password !== confirmPassword">
+                ثبت‌نام
+            </button>
+        </div>
+
+    </form>
+</div>

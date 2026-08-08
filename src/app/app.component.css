@@ -1,18 +1,5 @@
-@font-face {
-  font-family: 'YekanFont';
-
-  src:
-    url('/assets/fonts/Yekan.woff') format('woff'),
-    url('/assets/fonts/Yekan.ttf') format('truetype');
-
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-.page-content {
-  width: 100%;
-  min-height: calc(100vh - 190px);
-  padding-bottom: 76px;
-}
+ .page-content {
+   width: 100%;
+   min-height: calc(100vh - 190px);
+   padding-bottom: 76px;
+ }

@@ -1,4 +1,8 @@
-<section class="category-section" dir="rtl" aria-label="دسته‌بندی‌های اسنپ‌فود">
+<section
+  class="category-section"
+  dir="rtl"
+  aria-label="دسته‌بندی‌های اسنپ‌فود"
+>
   <div class="main-category-grid">
     <button
       *ngFor="let category of mainCategories; trackBy: trackByTitle"
@@ -9,7 +13,7 @@
       <span
         class="category-image-box"
         [ngClass]="{
-          'more-category-box': category.isMore,
+          'more-category-box': category.isMore
         }"
       >
         <span *ngIf="category.badge" class="category-badge">
@@ -19,7 +23,7 @@
         <span
           class="category-icon"
           [ngClass]="{
-            'more-category-icon': category.isMore,
+            'more-category-icon': category.isMore
           }"
         >
           {{ category.icon }}

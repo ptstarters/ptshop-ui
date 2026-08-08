@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "firstName": "محمد",
+      "lastName": "تاجیک",
+      "phone": "09123456789",
+      "password": "abcd1234",
+      "address": "تهران......",
+      "id": 3
+    },
+    {
+      "firstName": "رضا",
+      "lastName": "رضایی",
+      "phone": "09345678910",
+      "password": "شذ123456",
+      "address": "تهران......",
+      "id": 4
+    },
+    {
+      "firstName": "علی",
+      "lastName": "مروتی",
+      "phone": "09123456789",
+      "password": "شذ123456",
+      "address": "تهران......",
+      "id": 5
+    }
+  ]
+}

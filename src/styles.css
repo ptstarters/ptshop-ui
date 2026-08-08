@@ -1,3 +1,12 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/themes/lara-light-purple/theme.css";
+
+
+@import "primeng/resources/primeng.css";
+@import 'primeicons/primeicons.css';
+
+
+
 @font-face {
   font-family: 'YekanFont';
 
@@ -8,12 +17,16 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+
 }
 
 
 
+
+
+
+
 :root {
-  --app-font: 'YekanFont', Tahoma, Arial, sans-serif;
   --color-primary: #8ec5ff;
   --color-primary-dark: #6aaeea;
   --color-primary-light: #dff1ff;
@@ -28,7 +41,8 @@
   --color-text-soft: #6f8398;
 
   --color-shadow: rgba(109, 168, 228, 0.18);
-  
+  --font-family: 'YekanFont', Tahoma, sans-serif !important;
+
 }
 
 * {
@@ -41,7 +55,8 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: var(--app-font);
+  font-family: 'YekanFont', Tahoma, Arial, sans-serif;
+  direction: rtl;
 
 }
 
@@ -50,7 +65,7 @@ html {
 }
 
 body {
-  font-family: 'Vazirmatn Variable', Tahoma, Arial, sans-serif;
+  font-family: 'YekanFont', Tahoma, Arial, sans-serif;
   color: var(--color-text);
   background-color: #f6fbff;
 
@@ -76,9 +91,10 @@ textarea,
 select,
 .p-component {
   .p-component {
-   font-family: var(--app-font) !important;
+    font-family: var(--app-font) !important;
+  }
 }
-}
+
 button,
 input,
 textarea,
@@ -103,6 +119,7 @@ app-root {
   width: 100%;
   min-height: 100vh;
 }
+
 .pi,
 .pi::before {
   font-family: 'primeicons' !important;
