@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
 import { UserListComponent } from './pages/user/users list/users-list.component';
 import { CommonModule } from '@angular/common';
+import { RegistrationModule } from './registration(تمرین)/registration.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,7 +26,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     PagesModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RegistrationModule
 
 
   ],

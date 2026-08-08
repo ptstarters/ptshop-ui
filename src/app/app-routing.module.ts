@@ -15,6 +15,7 @@ import { PeymentComponent } from './pages/peyment/peyment.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { ApiPracticeComponent } from './pages/api-practice/api-practice.component';
 import { UserListComponent } from './pages/user/users list/users-list.component';
+import { RegistrationComponent } from './registration(تمرین)/registration.component';
 
 const routes: Routes = [
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'api-practice', component: ApiPracticeComponent },
   { path: 'user', component: UserListComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'registration', component: RegistrationComponent },
 
 
 

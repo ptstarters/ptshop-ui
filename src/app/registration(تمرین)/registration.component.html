@@ -1,0 +1,79 @@
+<div class="form-container" routerLink="/registration">
+    <h2>فرم ثبت‌نام (Reactive + Sync/Async)</h2>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <!-- فیلد نام کاربری -->
+        <div class="form-group">
+            <label for="username">نام کاربری</label>
+            <input id="username" type="text" formControlName="username"
+                placeholder="حداقل ۴ کاراکتر، فقط حروف/اعداد/زیرخط" class="form-control"
+                [class.is-invalid]="f['username'].invalid && f['username'].touched">
+
+            <!-- نمایش وضعیت PENDING (اسپینر) -->
+            <div *ngIf="f['username'].status === 'PENDING'" class="spinner">
+                <span class="spinner-border spinner-border-sm"></span> در حال بررسی سرور...
+            </div>
+
+            <!-- خطاهای همزمان -->
+            <div *ngIf="f['username'].invalid && f['username'].touched" class="invalid-feedback">
+                <div *ngIf="f['username'].errors?.['required']">نام کاربری الزامی است.</div>
+                <div *ngIf="f['username'].errors?.['minlength']">حداقل ۴ کاراکتر وارد کنید.</div>
+                <div *ngIf="f['username'].errors?.['pattern']">فقط حروف، اعداد و زیرخط مجاز است.</div>
+            </div>
+
+            <!-- خطای ناهمگام -->
+            <div *ngIf="f['username'].errors?.['usernameExists'] && f['username'].touched" class="invalid-feedback">
+                این نام کاربری قبلاً ثبت شده است.
+            </div>
+        </div>
+
+        <!-- فیلد ایمیل -->
+        <div class="form-group">
+            <label for="email">ایمیل</label>
+            <input id="email" type="email" formControlName="email" placeholder="example@domain.com" class="form-control"
+                [class.is-invalid]="f['email'].invalid && f['email'].touched">
+            <div *ngIf="f['email'].invalid && f['email'].touched" class="invalid-feedback">
+                <div *ngIf="f['email'].errors?.['required']">ایمیل الزامی است.</div>
+                <div *ngIf="f['email'].errors?.['email']">لطفاً یک ایمیل معتبر وارد کنید.</div>
+            </div>
+        </div>
+
+        <!-- فیلد رمز عبور -->
+        <div class="form-group">
+            <label for="password">رمز عبور</label>
+            <input id="password" type="password" formControlName="password" placeholder="حداقل ۶ کاراکتر"
+                class="form-control" [class.is-invalid]="f['password'].invalid && f['password'].touched">
+            <div *ngIf="f['password'].invalid && f['password'].touched" class="invalid-feedback">
+                <div *ngIf="f['password'].errors?.['required']">رمز عبور الزامی است.</div>
+                <div *ngIf="f['password'].errors?.['minlength']">حداقل ۶ کاراکتر وارد کنید.</div>
+            </div>
+        </div>
+
+        <!-- فیلد تکرار رمز عبور -->
+        <div class="form-group">
+            <label for="confirmPassword">تکرار رمز عبور</label>
+            <input id="confirmPassword" type="password" formControlName="confirmPassword"
+                placeholder="رمز را دوباره وارد کنید" class="form-control"
+                [class.is-invalid]="f['confirmPassword'].invalid && f['confirmPassword'].touched">
+            <div *ngIf="f['confirmPassword'].invalid && f['confirmPassword'].touched" class="invalid-feedback">
+                <div *ngIf="f['confirmPassword'].errors?.['required']">تکرار رمز الزامی است.</div>
+                <div *ngIf="f['confirmPassword'].errors?.['passwordMismatch']">رمزها با هم تطابق ندارند.</div>
+            </div>
+        </div>
+
+        <!-- دکمه ارسال (غیرفعال در حالت PENDING یا INVALID) -->
+        <button type="submit" class="btn btn-primary"
+            [disabled]="registrationForm.invalid || registrationForm.pending || isSubmitting">
+            {{ isSubmitting ? 'در حال ارسال...' : 'ثبت نام' }}
+        </button>
+
+        <!-- نمایش وضعیت کلی فرم -->
+        <div class="form-status">
+            <p>وضعیت فرم: <strong>{{ registrationForm.status }}</strong></p>
+            <p *ngIf="registrationForm.pending" class="text-warning">⏳ منتظر پاسخ سرور...</p>
+            <p *ngIf="registrationForm.valid" class="text-success">✅ فرم معتبر است.</p>
+            <p *ngIf="registrationForm.invalid && registrationForm.touched" class="text-danger">❌ فرم نامعتبر است.</p>
+        </div>
+    </form>
+</div>

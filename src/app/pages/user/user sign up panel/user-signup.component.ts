@@ -2,16 +2,9 @@ import { Component } from "@angular/core";
 import { Location } from '@angular/common';
 import { Router } from "@angular/router";
 import { ApiService } from "src/app/services/apiService.module";
+import { UserSignUp } from "src/app/models/user-signup.model";
 
 // 1. تعریف اینترفیس برای داده‌ای که به سرور می‌فرستیم
-interface UserSignUp {
-    firstName: string;
-    lastName: string;
-    phone: string;   // بهتر است string باشد چون ممکن است با 0 شروع شود
-    password: string;
-    address: string;
-    role?: string;
-}
 
 
 @Component({

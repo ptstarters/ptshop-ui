@@ -96,14 +96,14 @@
 }
 
 .cart-button {
-  border-color: #72a9dc;
-  background-color: #72a9dc;
-  color: #ffffff;
+  border-color: #315679;
+  background-color: #3c6890;
+  color: #5c56d4;
 }
 
 .cart-button:hover {
   background-color: #5794cd;
-  color: #ffffff;
+  color: #47376f;
 }
 
 

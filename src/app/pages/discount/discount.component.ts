@@ -1,20 +1,8 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DiscountFilter, DiscountFilterId } from 'src/app/models/discount.model';
 
-type DiscountFilterId =
-  | 'all'
-  | 'party'
-  | 'discount'
-  | 'free-delivery'
-  | 'free-product'
-  | 'prize';
-
-interface DiscountFilter {
-  id: DiscountFilterId;
-  title: string;
-  icon: string;
-}
 
 @Component({
   selector: 'app-discount',

@@ -26,12 +26,6 @@ export class UserLoginComponent {
     return /^09\d{9}$/.test(this.password);
   }
 
-  // doLogin(): void {
-
-  //   this.authService.login();
-
-  // }
-
 
   goBack(): void {
     this.location.back();
